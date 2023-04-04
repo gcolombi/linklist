@@ -1,0 +1,38 @@
+{
+    "name": "John Doe",
+    "avatar": "https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "links": [
+        {
+            "title": "React",
+            "url": "https://react.dev",
+            "image": "https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg"
+        },
+        {
+            "title": "Next.js",
+            "url": "https://nextjs.org",
+            "image": "https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original.svg"
+        },
+        {
+            "title": "Vercel",
+            "url": "https://vercel.com",
+            "image": "https://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_400x400.jpg"
+        }
+    ],
+    "socials": [
+        {
+            "title": "Twitter",
+            "url": "https://twitter.com",
+            "image": "https://github.com/devicons/devicon/blob/master/icons/twitter/twitter-original.svg"
+        },
+        {
+            "title": "Linkedin",
+            "url": "https://www.linkedin.com",
+            "image": "https://github.com/devicons/devicon/blob/master/icons/linkedin/linkedin-original.svg"
+        },
+        {
+            "title": "GitHub",
+            "url": "https://github.com",
+            "image": "https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg"
+        }
+    ]
+}
