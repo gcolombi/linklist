@@ -4,35 +4,35 @@
     "links": [
         {
             "title": "React",
-            "url": "https://react.dev",
-            "image": "https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg"
+            "href": "https://react.dev",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original.svg"
         },
         {
             "title": "Next.js",
-            "url": "https://nextjs.org",
-            "image": "https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original.svg"
+            "href": "https://nextjs.org",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nextjs/nextjs-original.svg"
         },
         {
             "title": "Vercel",
-            "url": "https://vercel.com",
+            "href": "https://vercel.com",
             "image": "https://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_400x400.jpg"
         }
     ],
     "socials": [
         {
             "title": "Twitter",
-            "url": "https://twitter.com",
-            "image": "https://github.com/devicons/devicon/blob/master/icons/twitter/twitter-original.svg"
+            "href": "https://twitter.com",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/twitter/twitter-original.svg"
         },
         {
             "title": "Linkedin",
-            "url": "https://www.linkedin.com",
-            "image": "https://github.com/devicons/devicon/blob/master/icons/linkedin/linkedin-original.svg"
+            "href": "https://www.linkedin.com",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/linkedin/linkedin-original.svg"
         },
         {
             "title": "GitHub",
-            "url": "https://github.com",
-            "image": "https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg"
+            "href": "https://github.com",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/github/github-original.svg"
         }
     ]
 }
