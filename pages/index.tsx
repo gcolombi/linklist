@@ -38,19 +38,23 @@ function LinkCard({
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center mt-16">
-            <Image
-                className="rounded-full"
-                alt={data.name}
-                src={data.avatar}
-                width={96}
-                height={96}
-                priority
-            />
-            <h1 className="font-bold mt-4 mb-8 text-xl text-white">@{data.name}</h1>
-            {data.links.map((link) => (
-                <LinkCard key={link.href} {...link} />
-            ))}
+        <div>
+            <div className="max-w-2xl mx-auto">
+                <div className="flex flex-col items-center pt-16">
+                    <Image
+                        className="rounded-full"
+                        alt={data.name}
+                        src={data.avatar}
+                        width={96}
+                        height={96}
+                        priority
+                    />
+                    <h1 className="font-bold mt-4 mb-8 text-xl text-white">@{data.name}</h1>
+                    {data.links.map((link) => (
+                        <LinkCard key={link.href} {...link} />
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
