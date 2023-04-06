@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import data from '../data.json';
+import MetaData from '@/components/MetaData';
 
 function LinkCard({
     title,
@@ -38,23 +39,26 @@ function LinkCard({
 
 export default function Home() {
     return (
-        <div>
-            <div className="max-w-2xl mx-auto">
-                <div className="flex flex-col items-center pt-16">
-                    <Image
-                        className="rounded-full"
-                        alt={data.name}
-                        src={data.avatar}
-                        width={96}
-                        height={96}
-                        priority
-                    />
-                    <h1 className="font-bold mt-4 mb-8 text-xl text-white">@{data.name}</h1>
-                    {data.links.map((link) => (
-                        <LinkCard key={link.href} {...link} />
-                    ))}
+        <>
+            <MetaData />
+            <div>
+                <div className="max-w-2xl mx-auto">
+                    <div className="flex flex-col items-center pt-16">
+                        <Image
+                            className="rounded-full"
+                            alt={data.name}
+                            src={data.avatar}
+                            width={96}
+                            height={96}
+                            priority
+                        />
+                        <h1 className="font-bold mt-4 mb-8 text-xl text-white">@{data.name}</h1>
+                        {data.links.map((link) => (
+                            <LinkCard key={link.href} {...link} />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
