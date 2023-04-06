@@ -6,9 +6,9 @@ function LinkCard({
     href,
     image
 }: {
-    title: string,
-    href: string,
-    image?: string
+    title: string;
+    href: string;
+    image?: string;
 }) {
     return (
         <a

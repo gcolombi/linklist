@@ -8,7 +8,7 @@ module.exports = {
         hoverOnlyWhenSupported: true
     },
     theme: {
-        extend: {},
+        extend: {}
     },
-    plugins: [],
+    plugins: []
 }
