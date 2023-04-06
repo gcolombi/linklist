@@ -1,3 +1,5 @@
+import Instagram from '@/components/socials/Instagram';
+import Twitter from '@/components/socials/Twitter';
 import Image from 'next/image';
 import data from '../data.json';
 
@@ -53,6 +55,10 @@ export default function Home() {
                     {data.links.map((link) => (
                         <LinkCard key={link.href} {...link} />
                     ))}
+                    <div className="bg-red-600">
+                        <Twitter />
+                        <Instagram />
+                    </div>
                 </div>
             </div>
         </div>
