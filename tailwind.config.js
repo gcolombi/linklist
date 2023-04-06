@@ -5,7 +5,7 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}"
     ],
     future: {
-        hoverOnlyWhenSupported: true,
+        hoverOnlyWhenSupported: true
     },
     theme: {
         extend: {},

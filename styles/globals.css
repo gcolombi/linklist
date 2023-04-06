@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(25deg,
         hsl(240deg 15% 13%) 0%,
         hsl(233deg 22% 15%) 11%,
@@ -15,4 +15,4 @@ body {
         hsl(264deg 54% 40%) 87%,
         hsl(287deg 84% 36%) 100%
     );
-  }
+}
