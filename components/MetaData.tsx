@@ -13,7 +13,7 @@ export default function MetaData() {
             <meta property="og:title" content={''} />
             <meta property="og:description" content={''} />
             <meta property="og:url" content={currentURL} />
-            <meta property="og:site_name" content={''} />
+            <meta property="og:site_name" content={process.env.NEXT_PUBLIC_SITE_NAME} />
             <meta property="og:type" content={''} />
             <meta property="og:image" content={''} />
             <meta name="robots" content="follow, index" />
