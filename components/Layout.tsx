@@ -6,7 +6,7 @@ export default function Layout({
     children: ReactNode;
 }) {
     return (
-        <main id="content">
+        <main id="content" className="min-h-screen">
             {children}
         </main>
     );
