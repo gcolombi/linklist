@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import data from '../data.json';
 import MetaData from '@/components/MetaData';
+import Share from '@/components/icons/Share';
 
 function ListItem({
     title,
@@ -12,27 +13,26 @@ function ListItem({
     image?: string;
 }) {
     return (
-        <li className="relative w-full group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all">
+        <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black">
             <a
                 href={href}
-                className="relative block py-4 px-16 w-full rounded bg-gray-100"
+                className="relative block py-4 px-16 text-center"
             >
-                <div className="flex items-center w-full">
-                    {image && (
-                        <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12">
-                            <Image
-                                className="rounded"
-                                alt={title}
-                                src={image}
-                                width={48}
-                                height={48}
-                            />
-                        </div>
-                    )}
-                    <h2 className="flex-grow font-semibold text-gray-700 text-center">{title}</h2>
-                </div>
+                {image && (
+                    <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12">
+                        <Image
+                            className="rounded"
+                            alt={title}
+                            src={image}
+                            width={48}
+                            height={48}
+                        />
+                    </div>
+                )}
+                <h2 className="font-medium">{title}</h2>
             </a>
-            <button className="absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-black/20 group-hover:opacity-100 opacity-0 transition-all">
+            <button className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-black/20 group-hover:opacity-100 opacity-0 transition-all">
+                <Share />
             </button>
         </li>
     )
@@ -58,7 +58,7 @@ export default function Home() {
                             <h1 className="font-bold mt-4 text-xl text-white">@{data.name}</h1>
                         </div>
 
-                        <ul className="flex flex-col items-center mt-8">
+                        <ul className="mt-8">
                             {data.links.map((link) => (
                                 <ListItem key={link.href} {...link} />
                             ))}
