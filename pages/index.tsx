@@ -3,22 +3,24 @@ import data from '../data.json';
 import MetaData from '@/components/MetaData';
 import Share from '@/components/icons/Share';
 
+type Item = {
+    title: string;
+    href: string;
+    image?: string;
+}
+
 function ListItem({
     title,
     href,
     image
-}: {
-    title: string;
-    href: string;
-    image?: string;
-}) {
+}: Item ) {
     return (
         <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black">
             <a
                 href={href}
                 className="relative block py-4 px-16 text-center"
             >
-                {image && (
+                {image &&
                     <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12">
                         <Image
                             className="rounded"
@@ -28,7 +30,7 @@ function ListItem({
                             height={48}
                         />
                     </div>
-                )}
+                }
                 <h2 className="font-medium">{title}</h2>
             </a>
             <button className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-black/20 group-hover:opacity-100 opacity-0 transition-all">
@@ -58,12 +60,19 @@ export default function Home() {
                             <h1 className="font-bold mt-4 text-xl text-white">@{data.name}</h1>
                         </div>
 
-                        <ul className="mt-8">
-                            {data.links.map((link) => (
-                                <ListItem key={link.href} {...link} />
-                            ))}
-                        </ul>
+                        {data.links.length !== 0 &&
+                            <ul className="mt-8">
+                                {data.links.map((link: Item) => (
+                                    <ListItem key={link.href} {...link} />
+                                ))}
+                            </ul>
+                        }
 
+                        <div className="mt-6">
+                            <div className="flex justify-center items-center">
+                                Hello
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
