@@ -21,27 +21,33 @@
     "socials": [
         {
             "title": "Facebook",
-            "href": "https://www.facebook.com"
+            "href": "https://www.facebook.com",
+            "component": "test"
         },
         {
             "title": "Twitter",
-            "href": "https://twitter.com"
+            "href": "https://twitter.com",
+            "component": "twitter"
         },
         {
             "title": "Instagram",
-            "href": "https://www.instagram.com"
+            "href": "https://www.instagram.com",
+            "component": "instagram"
         },
         {
             "title": "TikTok",
-            "href": "https://www.tiktok.com"
+            "href": "https://www.tiktok.com",
+            "component": "tiktok"
         },
         {
             "title": "Spotify",
-            "href": "https://open.spotify.com"
+            "href": "https://open.spotify.com",
+            "component": "spotify"
         },
         {
             "title": "Youtube",
-            "href": "https://www.youtube.com"
+            "href": "https://www.youtube.com",
+            "component": "youtube"
         }
     ]
 }

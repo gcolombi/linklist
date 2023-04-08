@@ -2,6 +2,8 @@ import Image from 'next/image';
 import data from '../data.json';
 import MetaData from '@/components/MetaData';
 import Share from '@/components/icons/Share';
+import Icon from '@/components/icons/socialMedias';
+import React from 'react';
 
 type Item = {
     title: string;
@@ -69,10 +71,15 @@ export default function Home() {
                         }
 
                         <div className="mt-6">
-                            <div className="flex justify-center items-center">
-                                Hello
+                            <div className="flex justify-center items-center flex-wrap">
+                                {data.socials.map((social) => (
+                                    <a href={social.href} target="_blank" rel="noopener noreferrer" className="px-2 hover:scale-105 transition-transform" key={social.href}>
+                                        <Icon component={social.component} />
+                                    </a>
+                                ))}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
