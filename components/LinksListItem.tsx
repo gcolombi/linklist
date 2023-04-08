@@ -11,7 +11,10 @@ export default function LinksListItem({
         <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black">
             <a
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative block py-4 px-16 text-center"
+                title={title}
             >
                 {image &&
                     <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12">
@@ -26,7 +29,7 @@ export default function LinksListItem({
                 }
                 <h2 className="font-medium">{title}</h2>
             </a>
-            <button className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-black/20 group-hover:opacity-100 opacity-0 transition-all">
+            <button className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-0 hover:bg-black/20 group-hover:opacity-100 transition duration-300">
                 <Share />
             </button>
         </li>

@@ -13,3 +13,14 @@ export type ListItem = {
     href: string;
     image?: string;
 }
+
+/* Social Medias */
+export type SocialMedias = {
+    socialMedias: SocialMediaItem[];
+}
+
+export type SocialMediaItem = {
+    title: string;
+    href: string;
+    component: string;
+}
