@@ -4,6 +4,8 @@ import MetaData from '@/components/MetaData';
 import Share from '@/components/icons/Share';
 import Icon from '@/components/icons/socialMedias';
 import React from 'react';
+import LinksListHeader from '@/components/LinksListHeader';
+import LinksList from '@/components/LinksList';
 
 type Item = {
     title: string;
@@ -49,26 +51,8 @@ export default function Home() {
             <section className="pt-16">
                 <div className="px-4">
                     <div className="max-w-2xl mx-auto">
-
-                        <div className="flex flex-col items-center">
-                            <Image
-                                className="rounded-full"
-                                alt={data.name}
-                                src={data.avatar}
-                                width={96}
-                                height={96}
-                                priority
-                            />
-                            <h1 className="font-bold mt-4 text-xl text-white">@{data.name}</h1>
-                        </div>
-
-                        {data.links.length !== 0 &&
-                            <ul className="mt-8">
-                                {data.links.map((link: Item) => (
-                                    <ListItem key={link.href} {...link} />
-                                ))}
-                            </ul>
-                        }
+                        <LinksListHeader {...data.header} />
+                        <LinksList links={data.links} />
 
                         <div className="mt-6">
                             <div className="flex justify-center items-center flex-wrap">

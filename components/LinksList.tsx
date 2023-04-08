@@ -1,9 +1,9 @@
-import { LinksList, ListItem } from '@/lib/types';
+import { List, ListItem } from '@/lib/types';
 import LinksListItem from './LinksListItem';
 
 export default function LinksList({
     links
-}: LinksList ) {
+}: List ) {
     return (
         <>
             {links.length !== 0 &&

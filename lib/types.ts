@@ -1,10 +1,10 @@
 /* Links List */
-export type LinksListHeader = {
+export type ListHeader = {
     avatar: string;
     name: string;
 }
 
-export type LinksList = {
+export type List = {
     links: ListItem[];
 }
 
