@@ -7,7 +7,7 @@ import Spotify from './Spotify';
 import YouTube from './YouTube';
 
 type Icon = {
-    [key: string]: FC
+    [key: string]: FC<{className?: string | undefined}>
 };
 
 const Icons: Icon = {
@@ -20,16 +20,18 @@ const Icons: Icon = {
 }
 
 export default function Icon({
-    component
+    component,
+    className
 }: {
     component: string;
+    className?: string | undefined;
 }) {
     const Component = Icons[component];
 
     return (
         <>
             {Component &&
-                <Component />
+                <Component className={className} />
             }
         </>
     );

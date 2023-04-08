@@ -74,7 +74,7 @@ export default function Home() {
                             <div className="flex justify-center items-center flex-wrap">
                                 {data.socials.map((social) => (
                                     <a href={social.href} target="_blank" rel="noopener noreferrer" className="px-2 hover:scale-105 transition-transform" key={social.href}>
-                                        <Icon component={social.component} />
+                                        <Icon component={social.component} className="w-8 h-8 text-white" />
                                     </a>
                                 ))}
                             </div>

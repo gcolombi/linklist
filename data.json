@@ -22,7 +22,7 @@
         {
             "title": "Facebook",
             "href": "https://www.facebook.com",
-            "component": "test"
+            "component": "facebook"
         },
         {
             "title": "Twitter",
