@@ -10,7 +10,7 @@ export default function Home() {
             <MetaData />
             <section className="pt-16">
                 <div className="px-4">
-                    <div className="max-w-2xl mx-auto">
+                    <div className="max-w-[680px] mx-auto">
                         <LinksListHeader {...data.header} />
                         <LinksList links={data.links} />
                         <SocialMediasList socialMedias={data.socials} />

@@ -20,7 +20,7 @@ export function TopBarContextProvider({
     const contextValue: TopBarContextType = {
         // ref,
         // setRef,
-        sticky: scrollY > 0
+        sticky: scrollY > 35
     }
 
     return (
