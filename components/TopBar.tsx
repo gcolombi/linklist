@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Dots from './icons/Dots';
 
 export default function TopBar() {
     return (
@@ -12,8 +13,12 @@ export default function TopBar() {
                     height={44}
                 />
             </div>
-            <h2>Top bar</h2>
-            <div></div>
+            <div>
+                <span className="block font-semibold">@John Doe</span>
+            </div>
+            <button className="flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 bg-white/80 text-black">
+                <Dots />
+            </button>
         </header>
     );
 };
