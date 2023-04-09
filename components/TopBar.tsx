@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Dots from './icons/Dots';
+import Share from './icons/Share';
 
 export default function TopBar() {
     return (
-        <header className="fixed top-0 left-0 right-0 z-10 w-[calc(100%-24px)] py-2 sm:py-3 px-3 grid items-center grid-cols-[1fr_auto_1fr] max-w-[788px] my-2 sm:my-4 mx-auto rounded-[72px] bg-white/50 border-solid border border-black/10 backdrop-blur-md">
-            <div>
+        // Header default state: border-color transparent | background transparent
+        <header className="fixed top-0 left-0 right-0 z-10 w-[calc(100%-24px)] py-2 sm:py-3 px-3 grid items-center grid-cols-[1fr_auto_1fr] max-w-[788px] my-2 sm:my-4 mx-auto rounded-[72px] bg-white/50 border-solid border border-black/10 backdrop-blur-md transition-all duration-300">
+            <div className="transition-[opacity] duration-300">
                 <Image
                     className="rounded-full"
                     alt="title"
@@ -13,11 +15,14 @@ export default function TopBar() {
                     height={44}
                 />
             </div>
-            <div>
+            {/* Title default state: opacity 0 */}
+            <div className="transition-[opacity] duration-300">
                 <span className="block font-semibold">@John Doe</span>
             </div>
-            <button className="flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 bg-white/80 text-black">
-                <Dots />
+            {/* Title default state: opacity 0 */}
+            <button className="flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 bg-white/80 text-black transition-[background] duration-300">
+                {/* <Dots /> */}
+                <Share />
             </button>
         </header>
     );
