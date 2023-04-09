@@ -17,9 +17,9 @@ export default function LinksListItem({
                 title={title}
             >
                 {image &&
-                    <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12">
+                    <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12 rounded overflow-hidden">
                         <Image
-                            className="rounded"
+                            className="h-full object-cover"
                             alt={title}
                             src={image}
                             width={48}

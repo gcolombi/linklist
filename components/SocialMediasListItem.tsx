@@ -11,7 +11,7 @@ export default function SocialMediasListItem({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-2 hover:scale-110 transition duration-300 mt-2"
+            className="mx-2 hover:scale-110 transition duration-300 mt-2"
             title={title}
         >
             <Icon component={component} className="w-8 h-8 text-white" />

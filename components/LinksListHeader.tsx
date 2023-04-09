@@ -10,7 +10,7 @@ export default function LinksListHeader({
             {avatar &&
                 <div>
                     <Image
-                        className="rounded-full"
+                        className="w-24 h-24 object-contain rounded-full"
                         alt={name}
                         src={avatar}
                         width={96}
