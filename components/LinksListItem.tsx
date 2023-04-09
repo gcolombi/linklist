@@ -8,7 +8,7 @@ export default function LinksListItem({
     image
 }: ListItem ) {
     return (
-        <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black">
+        <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black border-solid border border-black/10 shadow-md">
             <a
                 href={href}
                 target="_blank"

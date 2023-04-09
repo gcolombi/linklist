@@ -8,16 +8,20 @@ export default function LinksListHeader({
     return (
         <div className="flex flex-col items-center">
             {avatar &&
-                <Image
-                    className="rounded-full"
-                    alt={name}
-                    src={avatar}
-                    width={96}
-                    height={96}
-                    priority
-                />
+                <div>
+                    <Image
+                        className="rounded-full"
+                        alt={name}
+                        src={avatar}
+                        width={96}
+                        height={96}
+                        priority
+                    />
+                </div>
             }
-            <h1 className="font-bold mt-4 text-xl text-white">@{name}</h1>
+            <div className="mt-4">
+                <h1 className="font-bold text-xl text-white">@{name}</h1>
+            </div>
         </div>
     );
 };
