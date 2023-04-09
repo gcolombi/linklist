@@ -1,4 +1,5 @@
 import useTopBarContext from '@/context/topBarContext';
+import useWindowSize from '@/hooks/useWindowSize';
 import Image from 'next/image';
 import Dots from './icons/Dots';
 import Share from './icons/Share';
@@ -6,6 +7,8 @@ import classNames from 'classnames';
 
 export default function TopBar() {
     const { sticky } = useTopBarContext();
+    const { windowSize } = useWindowSize();
+
     return (
         <header
             className={classNames(
@@ -50,8 +53,10 @@ export default function TopBar() {
                     }
                 )}
             >
-                {/* <Dots /> */}
-                <Share />
+                {typeof windowSize?.width === 'number' && windowSize?.width <= 640
+                    ? <Dots />
+                    : <Share />
+                }
             </button>
         </header>
     );
