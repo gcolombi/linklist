@@ -7,11 +7,11 @@ import YouTube from './YouTube';
 
 
 type IconComponent = ({className}: {
-    className?: string | undefined
+    className?: string | undefined;
 }) => JSX.Element;
 
 type Icon = {
-    [key: string]: IconComponent
+    [key: string]: IconComponent;
 };
 
 const Icons: Icon = {
@@ -29,7 +29,7 @@ export default function Icon({
 }: {
     component: string;
     className?: string | undefined;
-}): JSX.Element {
+}) {
     const Component = Icons[component];
 
     return (
