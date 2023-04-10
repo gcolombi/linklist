@@ -47,9 +47,10 @@ export default function TopBar() {
             </div>
             <button
                 className={classNames(
-                    'flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 bg-white/80 text-black transition-[background] duration-300',
+                    'flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 transition-[background] duration-300',
                     {
-                        'bg-black text-white': sticky
+                        'bg-white/80 text-black hover:bg-white/70': !sticky,
+                        'bg-black text-white hover:bg-black/75': sticky
                     }
                 )}
             >

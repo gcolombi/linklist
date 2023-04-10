@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 import useScrollbar from '@/hooks/useScrollbar';
 
 interface TopBarContextType {
@@ -14,13 +14,10 @@ export function TopBarContextProvider({
 }: {
     children: ReactNode
 }) {
-    // const [ref, setRef] = useState(null);
     const { scrollY } = useScrollbar();
 
     const contextValue: TopBarContextType = {
-        // ref,
-        // setRef,
-        sticky: scrollY > 35
+        sticky: scrollY > 38
     }
 
     return (
