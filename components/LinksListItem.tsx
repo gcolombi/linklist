@@ -29,7 +29,10 @@ export default function LinksListItem({
                 }
                 <h2 className="font-medium">{title}</h2>
             </a>
-            <button className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-0 hover:bg-black/20 group-hover:opacity-100 transition duration-300">
+            <button
+                className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-0 hover:bg-black/20 group-hover:opacity-100 transition duration-300"
+                title="Share"
+            >
                 <Share />
             </button>
         </li>

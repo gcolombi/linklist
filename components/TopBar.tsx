@@ -53,6 +53,7 @@ export default function TopBar() {
                         'bg-black text-white hover:bg-black/75': sticky
                     }
                 )}
+                title="Share"
             >
                 {typeof windowSize?.width === 'number' && windowSize?.width <= 640
                     ? <Dots />
