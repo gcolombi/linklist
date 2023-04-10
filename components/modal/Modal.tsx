@@ -15,7 +15,7 @@ function Modal({
 }: {
     children: ReactNode;
     showModal: boolean;
-    setModal: Dispatch<SetStateAction<boolean>>;
+    setModal: (state: boolean) => void;
 }, ref: ForwardedRef<HTMLDivElement> ) {
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
