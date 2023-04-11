@@ -1,33 +1,34 @@
 import { useState, useCallback, useMemo, useRef } from 'react';
+import useModalContext from '@/context/modalContext';
 import Modal from './Modal';
 
-export default function useShareModal({
-    title,
-    content
-}: {
-    title: string;
-    content: string;
-}) {
-    const [showShareModal, setShowShareModal] = useState(false);
+export default function useShareModal() {
+    const { open, setModal } = useModalContext();
+    // const [showShareModal, setShowShareModal] = useState(false);
 
-    const setModal = useCallback((state: boolean) => {
-        setShowShareModal(state);
-    }, [setShowShareModal]);
+    // const setModal = useCallback((state: boolean) => {
+    //     setShowShareModal(state);
+    // }, [setShowShareModal]);
 
-    const ShareModalCallback = useCallback(() => {
+    const ShareModalCallback = useCallback(({title, content}: {title: string, content: string}) => {
+        console.log(open);
         return (
             <ShareModal
                 title={title}
                 content={content}
-                showShareModal={showShareModal}
+                showShareModal={open}
                 setModal={setModal}
             />
         );
-    }, [title, content, showShareModal, setModal]);
+    }, [open, setModal]);
+
+    // return useMemo(() => ({
+    //     setModal, ShareModal: ShareModalCallback
+    // }), [setModal, ShareModalCallback]);
 
     return useMemo(() => ({
-        setModal, ShareModal: ShareModalCallback
-    }), [setModal, ShareModalCallback]);
+        ShareModal: ShareModalCallback
+    }), [ShareModalCallback]);
 }
 
 function ShareModal({

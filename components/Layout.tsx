@@ -1,12 +1,15 @@
 import { ReactNode } from 'react';
 import TopBar from './TopBar';
 import Footer from './Footer';
+import useShareModal from './modal/ShareModal';
 
 export default function Layout({
-    children
+    children,
 }: {
     children: ReactNode;
 }) {
+    const { ShareModal } = useShareModal();
+
     return (
         <>
             <TopBar />
@@ -14,6 +17,7 @@ export default function Layout({
                 {children}
                 <Footer />
             </main>
+            <ShareModal title="Share Modal" content="Beautiful share modal." />
         </>
     );
 }
