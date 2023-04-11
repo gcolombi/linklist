@@ -46,7 +46,7 @@ function ShareModal({
 
     return (
         <Modal showModal={showShareModal} setModal={setModal} ref={modalRef}>
-            <div className="" data-modal>
+            <div className="relative bg-white rounded-t-2xl max-w-[384px]:" data-modal>
                 <button
                     className=""
                     onClick={() => setModal(false) }

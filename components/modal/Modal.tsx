@@ -30,9 +30,9 @@ function Modal({
     return (
         <>
             {showModal &&
-                <section className="" ref={ref}>
+                <section className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50" ref={ref}>
                     <div
-                        className=""
+                        className="absolute top-0 left-0 w-full h-full bg-black/60"
                         onClick={() => setModal(false)}
                     />
                     {children}
