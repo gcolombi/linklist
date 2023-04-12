@@ -1,5 +1,12 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 import useScrollbar from '@/hooks/useScrollbar';
+import {
+    createContext,
+    Dispatch,
+    ReactNode,
+    SetStateAction,
+    useContext,
+    useState
+} from 'react';
 
 interface TopBarContextType {
     ref: HTMLElement | null;
