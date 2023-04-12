@@ -7,7 +7,7 @@ import Share from './icons/Share';
 import classNames from 'classnames';
 
 export default function TopBar() {
-    const { sticky } = useTopBarContext();
+    const { setRef, sticky } = useTopBarContext();
     const { windowSize } = useWindowSize();
     const { setModal } = useModalContext();
 
@@ -20,6 +20,7 @@ export default function TopBar() {
                     'bg-white/50 border-black/10 backdrop-blur-md': sticky
                 }
             )}
+            ref={(el) => setRef(el)}
         >
             <div
                 className={classNames(

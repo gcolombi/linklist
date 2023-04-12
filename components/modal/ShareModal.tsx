@@ -11,7 +11,6 @@ export default function useShareModal() {
     // }, [setShowShareModal]);
 
     const ShareModalCallback = useCallback(({title, content}: {title: string, content: string}) => {
-        console.log(open);
         return (
             <ShareModal
                 title={title}
