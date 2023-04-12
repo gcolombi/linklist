@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import useLockedScroll from '@/hooks/useLockedScroll';
+import {
+    createContext,
+    ReactNode,
+    useCallback,
+    useContext,
+    useState
+} from 'react';
 
 interface ModalContextType {
     open: boolean;
@@ -16,15 +23,17 @@ export function ModalContextProvider({
     children: ReactNode
 }) {
     const [open, setIsOpen] = useState(false);
+    const [locked, setLocked] = useLockedScroll(false);
 
     const setModal = useCallback((state: boolean) => {
         setIsOpen(state);
-    }, [setIsOpen]);
+        setLocked(state);
+    }, [setIsOpen, setLocked]);
 
     const contextValue: ModalContextType = {
         open,
         setModal
-    }
+    };
 
     return (
         <ModalContext.Provider

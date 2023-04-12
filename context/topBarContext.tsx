@@ -32,7 +32,7 @@ export function TopBarContextProvider({
         ref,
         setRef,
         sticky: scrollY > 38
-    }
+    };
 
     return (
         <TopBarContext.Provider

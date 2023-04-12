@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 import useTopBarContext from '@/context/topBarContext';
 
+type UseLockedScrollOutput = [boolean, (locked: boolean) => void];
+
 export default function useLockedScroll(
-    initialLocked: boolean
-) {
+    initialLocked = false
+): UseLockedScrollOutput {
     const { ref } = useTopBarContext();
     const [locked, setLocked] = useState(initialLocked);
 

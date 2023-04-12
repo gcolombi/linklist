@@ -14,7 +14,7 @@ export default function TopBar() {
     return (
         <header
             className={classNames(
-                'fixed top-0 left-0 right-0 z-10 w-[calc(100%-24px)] py-2 sm:py-3 px-3 grid items-center grid-cols-[1fr_auto_1fr] max-w-[788px] my-2 sm:my-3 mx-auto rounded-[72px] border-solid border transition-all duration-300',
+                'fixed top-0 left-0 right-0 z-10 w-[calc(100%-24px)] py-2 sm:py-3 px-3 grid items-center grid-cols-[1fr_auto_1fr] max-w-[788px] my-2 sm:my-3 mx-auto rounded-[72px] border-solid border transition-colors duration-300',
                 {
                     'bg-transparent border-transparent': !sticky,
                     'bg-white/50 border-black/10 backdrop-blur-md': sticky
