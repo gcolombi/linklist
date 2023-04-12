@@ -1,29 +1,26 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import useModalContext from '@/context/modalContext';
 import Modal from './Modal';
 
 export default function useShareModal() {
     const { open, setModal } = useModalContext();
-    // const [showShareModal, setShowShareModal] = useState(false);
 
-    // const setModal = useCallback((state: boolean) => {
-    //     setShowShareModal(state);
-    // }, [setShowShareModal]);
-
-    const ShareModalCallback = useCallback(({title, content}: {title: string, content: string}) => {
+    const ShareModalCallback = useCallback(({
+        title,
+        content
+    }: {
+        title: string,
+        content: string
+    }) => {
         return (
             <ShareModal
                 title={title}
                 content={content}
-                showShareModal={open}
+                showModal={open}
                 setModal={setModal}
             />
         );
     }, [open, setModal]);
-
-    // return useMemo(() => ({
-    //     setModal, ShareModal: ShareModalCallback
-    // }), [setModal, ShareModalCallback]);
 
     return useMemo(() => ({
         ShareModal: ShareModalCallback
@@ -33,18 +30,18 @@ export default function useShareModal() {
 function ShareModal({
     title,
     content,
-    showShareModal,
+    showModal,
     setModal
 }: {
     title: string;
     content: string;
-    showShareModal: boolean;
+    showModal: boolean;
     setModal: (state: boolean) => void;
 }) {
     const modalRef = useRef<HTMLDivElement>(null);
 
     return (
-        <Modal showModal={showShareModal} setModal={setModal} ref={modalRef}>
+        <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
             <div className="relative bg-white rounded-t-2xl max-w-[384px]:" data-modal>
                 <button
                     className=""
