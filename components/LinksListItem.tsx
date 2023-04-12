@@ -1,7 +1,7 @@
 import { ListItem } from '@/lib/types';
 import useModalContext from '@/context/modalContext';
 import Image from 'next/image';
-import Share from '@/components/icons/Share';
+import Share from '@/components/icons/share/Share';
 
 export default function LinksListItem({
     title,

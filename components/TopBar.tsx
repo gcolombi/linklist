@@ -3,7 +3,7 @@ import useModalContext from '@/context/modalContext';
 import useWindowSize from '@/hooks/useWindowSize';
 import Image from 'next/image';
 import Dots from './icons/Dots';
-import Share from './icons/Share';
+import Share from './icons/share/Share';
 import classNames from 'classnames';
 
 export default function TopBar() {
