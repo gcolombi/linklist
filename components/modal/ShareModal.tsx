@@ -68,7 +68,11 @@ function ShareModal({
                 <div className="mt-10 mb-4" data-modal-content>
                     <ul>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="https://www.facebook.com/sharer.php?u="
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <FacebookAlt />
                                 <div className="flex-1 ml-4">
                                     <p>Share on Facebook</p>
@@ -77,7 +81,11 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="https://www.linkedin.com/sharing/share-offsite/?url="
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <LinkedIn />
                                 <div className="flex-1 ml-4">
                                     <p>Share on LinkedIn</p>
@@ -86,7 +94,11 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="https://twitter.com/intent/tweet?text=Check out this Linktree! - "
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <TwitterAlt />
                                 <div className="flex-1 ml-4">
                                     <p>Share on Twitter</p>
@@ -95,7 +107,11 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="https://wa.me/?text=Check out this Linktree! - "
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <WhatsApp />
                                 <div className="flex-1 ml-4">
                                     <p>Share via WhatsApp</p>
@@ -104,7 +120,11 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="https://www.messenger.com/new"
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <Messenger />
                                 <div className="flex-1 ml-4">
                                     <p>Share via Messenger</p>
@@ -113,7 +133,11 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                            <a
+                                href="mailto:?subject= Check out this Linktree! &body= Check out this Linktree! - "
+                                target="_blank"
+                                className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                            >
                                 <Email />
                                 <div className="flex-1 ml-4">
                                     <p>Share via Email</p>
