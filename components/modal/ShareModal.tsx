@@ -2,8 +2,13 @@ import { useCallback, useMemo, useRef } from 'react';
 import useModalContext from '@/context/modalContext';
 import Modal from './Modal';
 import Close from '../icons/Close';
-import FacebookAlt from '../icons/share/FacebookAlt';
 import Chevron from '../icons/Chevron';
+import FacebookAlt from '../icons/share/FacebookAlt';
+import LinkedIn from '../icons/share/LinkedIn';
+import TwitterAlt from '../icons/share/TwitterAlt';
+import WhatsApp from '../icons/share/WhatsApp';
+import Messenger from '../icons/share/Messenger';
+import Email from '../icons/share/Email';
 
 export default function useShareModal() {
     const { open, setModal } = useModalContext();
@@ -67,6 +72,51 @@ function ShareModal({
                                 <FacebookAlt />
                                 <div className="flex-1 ml-4">
                                     <p>Share on Facebook</p>
+                                </div>
+                                <Chevron />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                                <LinkedIn />
+                                <div className="flex-1 ml-4">
+                                    <p>Share on LinkedIn</p>
+                                </div>
+                                <Chevron />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                                <TwitterAlt />
+                                <div className="flex-1 ml-4">
+                                    <p>Share on Twitter</p>
+                                </div>
+                                <Chevron />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                                <WhatsApp />
+                                <div className="flex-1 ml-4">
+                                    <p>Share via WhatsApp</p>
+                                </div>
+                                <Chevron />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                                <Messenger />
+                                <div className="flex-1 ml-4">
+                                    <p>Share via Messenger</p>
+                                </div>
+                                <Chevron />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                                <Email />
+                                <div className="flex-1 ml-4">
+                                    <p>Share via Email</p>
                                 </div>
                                 <Chevron />
                             </a>
