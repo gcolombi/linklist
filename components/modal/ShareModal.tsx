@@ -68,7 +68,7 @@ function ShareModal({
                 <div className="mt-10 mb-4" data-modal-content>
                     <ul>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <FacebookAlt />
                                 <div className="flex-1 ml-4">
                                     <p>Share on Facebook</p>
@@ -77,7 +77,7 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <LinkedIn />
                                 <div className="flex-1 ml-4">
                                     <p>Share on LinkedIn</p>
@@ -86,7 +86,7 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <TwitterAlt />
                                 <div className="flex-1 ml-4">
                                     <p>Share on Twitter</p>
@@ -95,7 +95,7 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <WhatsApp />
                                 <div className="flex-1 ml-4">
                                     <p>Share via WhatsApp</p>
@@ -104,7 +104,7 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <Messenger />
                                 <div className="flex-1 ml-4">
                                     <p>Share via Messenger</p>
@@ -113,7 +113,7 @@ function ShareModal({
                             </a>
                         </li>
                         <li>
-                            <a className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300" href="#">
+                            <a href="#" target="_blank" className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                                 <Email />
                                 <div className="flex-1 ml-4">
                                     <p>Share via Email</p>
