@@ -50,7 +50,7 @@ function ShareModal({
 
     return (
         <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
-            <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto font-semibold" data-modal>
+            <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto font-semibold sm:rounded-b-2xl" data-modal>
                 <div className="relative text-center">
                     <div className=" px-14">
                         <h2 className="">{title}</h2>
