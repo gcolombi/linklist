@@ -17,7 +17,7 @@ export default function Layout({
                 {children}
                 <Footer />
             </main>
-            <ShareModal title="Share Modal" content="Beautiful share modal." />
+            <ShareModal title="Share this Linktree" content="" />
         </>
     );
 }
