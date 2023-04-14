@@ -23,7 +23,7 @@ const TopBarContext = createContext<TopBarContextType>({
 export function TopBarContextProvider({
     children
 }: {
-    children: ReactNode
+    children: ReactNode;
 }) {
     const [ref, setRef] = useState<HTMLElement | null>(null);
     const { scrollY } = useScrollbar();

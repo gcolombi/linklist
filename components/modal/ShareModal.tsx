@@ -15,16 +15,13 @@ export default function useShareModal() {
     const { open, setModal } = useModalContext();
 
     const ShareModalCallback = useCallback(({
-        title,
-        content
+        title
     }: {
-        title: string,
-        content: string
+        title: string;
     }) => {
         return (
             <ShareModal
                 title={title}
-                content={content}
                 showModal={open}
                 setModal={setModal}
             />
@@ -38,12 +35,10 @@ export default function useShareModal() {
 
 function ShareModal({
     title,
-    content,
     showModal,
     setModal
 }: {
     title: string;
-    content: string;
     showModal: boolean;
     setModal: (state: boolean) => void;
 }) {
@@ -75,7 +70,7 @@ function ShareModal({
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <FacebookAlt />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share on Facebook</p>
                                 </div>
                                 <Chevron />
@@ -88,7 +83,7 @@ function ShareModal({
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <LinkedIn />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share on LinkedIn</p>
                                 </div>
                                 <Chevron />
@@ -101,7 +96,7 @@ function ShareModal({
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <TwitterAlt />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share on Twitter</p>
                                 </div>
                                 <Chevron />
@@ -114,7 +109,7 @@ function ShareModal({
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <WhatsApp />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share via WhatsApp</p>
                                 </div>
                                 <Chevron />
@@ -127,7 +122,7 @@ function ShareModal({
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <Messenger />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share via Messenger</p>
                                 </div>
                                 <Chevron />
@@ -135,12 +130,12 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href="mailto:?subject= Check out this Linktree! &body= Check out this Linktree! - "
+                                href="mailto:?subject=Check out this Linktree! &body=Check out this Linktree! - "
                                 target="_blank"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <Email />
-                                <div className="flex-1 ml-4">
+                                <div className="flex-1 mx-4">
                                     <p>Share via Email</p>
                                 </div>
                                 <Chevron />
@@ -151,15 +146,13 @@ function ShareModal({
                 <div className="px-4">
                     <button className="w-full py-[17px] pl-3 border-solid border border-gray-300 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
                         <div className="flex items-center">
-                            <div className="flex items-center flex-1">
-                                <div className="text-[#43E660]">
-                                    <Logo />
-                                </div>
-                                <div className="pl-4">
-                                    <p>linktr.ee/gcolombi?u...</p>
-                                </div>
+                            <div className="text-[#43E660]">
+                                <Logo />
                             </div>
-                            <div className="w-[76px]">
+                            <div className="pl-4 text-left flex-1 min-w-0">
+                                <p className="whitespace-nowrap overflow-hidden text-ellipsis">http://localhost:3000?u=loremipsum</p>
+                            </div>
+                            <div className="w-[76px] whitespace-nowrap">
                                 <p>Copy</p>
                             </div>
                         </div>

@@ -20,7 +20,7 @@ const ModalContext = createContext<ModalContextType>({
 export function ModalContextProvider({
     children
 }: {
-    children: ReactNode
+    children: ReactNode;
 }) {
     const [open, setIsOpen] = useState(false);
     const [locked, setLocked] = useLockedScroll(false);
