@@ -9,6 +9,7 @@ import TwitterAlt from '../icons/share/TwitterAlt';
 import WhatsApp from '../icons/share/WhatsApp';
 import Messenger from '../icons/share/Messenger';
 import Email from '../icons/share/Email';
+import Logo from '../icons/Logo';
 
 export default function useShareModal() {
     const { open, setModal } = useModalContext();
@@ -50,8 +51,8 @@ function ShareModal({
 
     return (
         <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
-            <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto font-semibold sm:rounded-b-2xl" data-modal>
-                <div className="relative text-center">
+            <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto sm:rounded-b-2xl" data-modal>
+                <div className="relative text-center font-semibold">
                     <div className=" px-14">
                         <h2 className="">{title}</h2>
                     </div>
@@ -65,7 +66,7 @@ function ShareModal({
                         </button>
                     </div>
                 </div>
-                <div className="mt-10 mb-4" data-modal-content>
+                <div className="mt-10 mb-4 font-semibold" data-modal-content>
                     <ul>
                         <li>
                             <a
@@ -146,6 +147,23 @@ function ShareModal({
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div className="px-4">
+                    <button className="w-full py-[17px] pl-3 border-solid border border-gray-300 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                        <div className="flex items-center">
+                            <div className="flex items-center flex-1">
+                                <div className="text-[#43E660]">
+                                    <Logo />
+                                </div>
+                                <div className="pl-4">
+                                    <p>linktr.ee/gcolombi?u...</p>
+                                </div>
+                            </div>
+                            <div className="w-[76px]">
+                                <p>Copy</p>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </Modal>
