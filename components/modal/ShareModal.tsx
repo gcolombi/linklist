@@ -67,6 +67,7 @@ function ShareModal({
                             <a
                                 href="https://www.facebook.com/sharer.php?u="
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <FacebookAlt />
@@ -80,6 +81,7 @@ function ShareModal({
                             <a
                                 href="https://www.linkedin.com/sharing/share-offsite/?url="
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <LinkedIn />
@@ -93,6 +95,7 @@ function ShareModal({
                             <a
                                 href="https://twitter.com/intent/tweet?text=Check out this Linktree! - "
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <TwitterAlt />
@@ -106,6 +109,7 @@ function ShareModal({
                             <a
                                 href="https://wa.me/?text=Check out this Linktree! - "
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <WhatsApp />
@@ -119,6 +123,7 @@ function ShareModal({
                             <a
                                 href="https://www.messenger.com/new"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <Messenger />
@@ -132,6 +137,7 @@ function ShareModal({
                             <a
                                 href="mailto:?subject=Check out this Linktree! &body=Check out this Linktree! - "
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                             >
                                 <Email />
