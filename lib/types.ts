@@ -9,6 +9,7 @@ export type List = {
 }
 
 export type ListItem = {
+    id: string;
     title: string;
     href: string;
     image?: string;
