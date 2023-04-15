@@ -14,7 +14,7 @@ export default function Document() {
                 <meta name="msapplication-config" content="" />
                 <meta name="theme-color" content="#ffffff" />
             </Head>
-            <body>
+            <body className="bg-black">
                 <a href="#content" className="sr-only">Skip to content</a>
                 <Main />
                 <NextScript />

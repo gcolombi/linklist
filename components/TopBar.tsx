@@ -13,8 +13,8 @@ export default function TopBar() {
     const { setModal } = useModalContext();
     const { currentURL } = useWindowLocation();
     const link = {
-        title: 'LinkList',
-        href: currentURL
+        title: 'Check out this Linklist!',
+        href: currentURL.split('?')[0]
     };
 
     return (

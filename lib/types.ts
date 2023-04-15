@@ -28,6 +28,7 @@ export type SocialMediaItem = {
 
 /* Modal */
 export type Link = {
+    id?: string;
     title: string;
     href: string;
 } | undefined

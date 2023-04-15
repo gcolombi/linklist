@@ -1,6 +1,7 @@
 import { Link } from '@/lib/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useModalContext from '@/context/modalContext';
+import useWindowLocation from '@/hooks/useWindowLocation';
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import Modal from './Modal';
 import Close from '../icons/Close';
@@ -51,9 +52,12 @@ function ShareModal({
     const [value, copy] = useCopyToClipboard();
     const [isCopying, setIsCopying] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
+    const { currentURL } = useWindowLocation();
+    const url = link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href;
 
     const copyHandler = () => {
-        copy(link?.href ?? '');
+        // copy(link?.href ?? '');
+        copy(url ?? '');
         setIsCopying(true);
     };
 
@@ -88,7 +92,8 @@ function ShareModal({
                     <ul>
                         <li>
                             <a
-                                href={`https://www.facebook.com/sharer.php?u=${link?.href}`}
+                                // href={`https://www.facebook.com/sharer.php?u=${link?.href}`}
+                                href={`https://www.facebook.com/sharer.php?u=${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -102,7 +107,8 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${link?.href}`}
+                                // href={`https://www.linkedin.com/sharing/share-offsite/?url=${link?.href}`}
+                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -116,7 +122,8 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href={`https://twitter.com/intent/tweet?text=${link?.title} - ${link?.href}`}
+                                // href={`https://twitter.com/intent/tweet?text=${link?.title} - ${link?.href}`}
+                                href={`https://twitter.com/intent/tweet?text=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -130,7 +137,8 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href={`https://wa.me/?text=${link?.title} - ${link?.href}`}
+                                // href={`https://wa.me/?text=${link?.title} - ${link?.href}`}
+                                href={`https://wa.me/?text=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -158,7 +166,8 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href={`mailto:?subject=Check out this link! &body=${link?.title} - ${link?.href}`}
+                                // href={`mailto:?subject=Check out this link! &body=${link?.title} - ${link?.href}`}
+                                href={`mailto:?subject=Check out this Linklist! &body=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -182,7 +191,8 @@ function ShareModal({
                                 <Logo />
                             </div>
                             <div className="pl-4 text-left flex-1 min-w-0">
-                                <p className="whitespace-nowrap overflow-hidden text-ellipsis">{link?.href}</p>
+                                {/* <p className="whitespace-nowrap overflow-hidden text-ellipsis">{link?.href}</p> */}
+                                <p className="whitespace-nowrap overflow-hidden text-ellipsis">{url}</p>
                             </div>
                             <div
                                 className={classNames(

@@ -13,7 +13,7 @@ export default function Layout({
     return (
         <>
             <TopBar />
-            <main id="content" className="flex flex-col justify-between min-h-screen">
+            <main id="content" className="flex flex-col justify-between min-h-screen relative">
                 {children}
                 <Footer />
             </main>

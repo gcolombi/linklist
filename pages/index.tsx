@@ -5,6 +5,7 @@ import LinksList from '@/components/LinksList';
 import SocialMediasList from '@/components/SocialMediasList';
 
 export default function Home() {
+
     return (
         <>
             <MetaData />
@@ -17,6 +18,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* <div className="absolute top-0 left-0 w-full h-full bg-black/80 z-[2000]"></div> */}
         </>
     )
 }
