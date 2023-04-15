@@ -28,7 +28,7 @@ export default function useShareModal() {
                 setModal={setModal}
             />
         );
-    }, [open, setModal]);
+    }, [open, link, setModal]);
 
     return useMemo(() => ({
         ShareModal: ShareModalCallback
