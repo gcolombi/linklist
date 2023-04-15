@@ -154,7 +154,9 @@ function ShareModal({
                     </ul>
                 </div>
                 <div className="px-4">
-                    <button className="w-full py-[17px] pl-3 border-solid border border-gray-300 rounded-lg hover:bg-gray-200 transition-[background] duration-300">
+                    <button
+                        className="w-full py-[17px] pl-3 border-solid border border-gray-300 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                    >
                         <div className="flex items-center">
                             <div className="text-[#43E660]">
                                 <Logo />
