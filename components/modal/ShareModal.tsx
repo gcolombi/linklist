@@ -1,6 +1,7 @@
 import { Link } from '@/lib/types';
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useModalContext from '@/context/modalContext';
+import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import Modal from './Modal';
 import Close from '../icons/Close';
 import Chevron from '../icons/Chevron';
@@ -11,6 +12,7 @@ import WhatsApp from '../icons/share/WhatsApp';
 import Messenger from '../icons/share/Messenger';
 import Email from '../icons/share/Email';
 import Logo from '../icons/Logo';
+import classNames from 'classnames';
 
 export default function useShareModal() {
     const { open, link, setModal } = useModalContext();
@@ -46,7 +48,24 @@ function ShareModal({
     showModal: boolean;
     setModal: (state: boolean, link?: Link) => void;
 }) {
+    const [value, copy] = useCopyToClipboard();
+    const [isCopying, setIsCopying] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
+
+    const copyHandler = () => {
+        copy(link?.href ?? '');
+        setIsCopying(true);
+    };
+
+    useEffect(() => {
+        if (isCopying) {
+            const timer = setTimeout(() => {
+                setIsCopying(false);
+            }, 1000);
+
+            return  () => clearTimeout(timer);
+        }
+    }, [isCopying]);
 
     return (
         <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
@@ -156,6 +175,7 @@ function ShareModal({
                 <div className="px-4">
                     <button
                         className="w-full py-[17px] pl-3 border-solid border border-gray-300 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
+                        onClick={copyHandler}
                     >
                         <div className="flex items-center">
                             <div className="text-[#43E660]">
@@ -164,8 +184,15 @@ function ShareModal({
                             <div className="pl-4 text-left flex-1 min-w-0">
                                 <p className="whitespace-nowrap overflow-hidden text-ellipsis">{link?.href}</p>
                             </div>
-                            <div className="w-[76px] whitespace-nowrap">
-                                <p>Copy</p>
+                            <div
+                                className={classNames(
+                                    'w-[76px] whitespace-nowrap',
+                                    {
+                                        ' text-green-800': isCopying
+                                    }
+                                )}
+                            >
+                                <p>{isCopying ? 'Copied!' : 'Copy'}</p>
                             </div>
                         </div>
                     </button>
