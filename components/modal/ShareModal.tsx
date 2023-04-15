@@ -56,7 +56,6 @@ function ShareModal({
     const url = link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href;
 
     const copyHandler = () => {
-        // copy(link?.href ?? '');
         copy(url ?? '');
         setIsCopying(true);
     };
@@ -92,7 +91,6 @@ function ShareModal({
                     <ul>
                         <li>
                             <a
-                                // href={`https://www.facebook.com/sharer.php?u=${link?.href}`}
                                 href={`https://www.facebook.com/sharer.php?u=${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -107,7 +105,6 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                // href={`https://www.linkedin.com/sharing/share-offsite/?url=${link?.href}`}
                                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -122,7 +119,6 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                // href={`https://twitter.com/intent/tweet?text=${link?.title} - ${link?.href}`}
                                 href={`https://twitter.com/intent/tweet?text=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -137,7 +133,6 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                // href={`https://wa.me/?text=${link?.title} - ${link?.href}`}
                                 href={`https://wa.me/?text=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -166,7 +161,6 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                // href={`mailto:?subject=Check out this link! &body=${link?.title} - ${link?.href}`}
                                 href={`mailto:?subject=Check out this Linklist! &body=${link?.title} - ${url}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -191,7 +185,6 @@ function ShareModal({
                                 <Logo />
                             </div>
                             <div className="pl-4 text-left flex-1 min-w-0">
-                                {/* <p className="whitespace-nowrap overflow-hidden text-ellipsis">{link?.href}</p> */}
                                 <p className="whitespace-nowrap overflow-hidden text-ellipsis">{url}</p>
                             </div>
                             <div
