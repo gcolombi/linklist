@@ -4,9 +4,7 @@ export type ListHeader = {
     name: string;
 }
 
-export type List = {
-    links: ListItem[];
-}
+export type List = ListItem[];
 
 export type ListItem = {
     id: string;
