@@ -1,6 +1,7 @@
 import useTopBarContext from '@/context/topBarContext';
-import useModalContext from '@/context/modalContext';
 import useWindowSize from '@/hooks/useWindowSize';
+import useModalContext from '@/context/modalContext';
+import useWindowLocation from '@/hooks/useWindowLocation';
 import Image from 'next/image';
 import Dots from './icons/Dots';
 import Share from './icons/share/Share';
@@ -10,6 +11,11 @@ export default function TopBar() {
     const { setRef, sticky } = useTopBarContext();
     const { windowSize } = useWindowSize();
     const { setModal } = useModalContext();
+    const { currentURL } = useWindowLocation();
+    const link = {
+        title: 'LinkList',
+        href: currentURL
+    };
 
     return (
         <header
@@ -57,7 +63,7 @@ export default function TopBar() {
                     }
                 )}
                 title="Share"
-                onClick={() => setModal(true)}
+                onClick={() => setModal(true, link)}
             >
                 {typeof windowSize?.width === 'number' && windowSize?.width <= 640
                     ? <Dots />

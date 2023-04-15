@@ -1,3 +1,4 @@
+import { Link } from '@/lib/types';
 import {
     ForwardedRef,
     forwardRef,
@@ -13,7 +14,7 @@ function Modal({
 }: {
     children: ReactNode;
     showModal: boolean;
-    setModal: (state: boolean) => void;
+    setModal: (state: boolean, link?: Link) => void;
 }, ref: ForwardedRef<HTMLDivElement> ) {
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {

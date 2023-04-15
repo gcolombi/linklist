@@ -1,3 +1,4 @@
+import { Link } from '@/lib/types';
 import useLockedScroll from '@/hooks/useLockedScroll';
 import {
     createContext,
@@ -9,11 +10,13 @@ import {
 
 interface ModalContextType {
     open: boolean;
-    setModal: (state: boolean) => void;
+    link?: Link;
+    setModal: (state: boolean, link?: Link) => void;
 }
 
 const ModalContext = createContext<ModalContextType>({
     open: false,
+    link: undefined,
     setModal: () => {}
 });
 
@@ -23,15 +26,18 @@ export function ModalContextProvider({
     children: ReactNode;
 }) {
     const [open, setIsOpen] = useState(false);
+    const [link, setLink] = useState<Link>(undefined);
     const [locked, setLocked] = useLockedScroll(false);
 
-    const setModal = useCallback((state: boolean) => {
+    const setModal = useCallback((state: boolean, link?: Link) => {
         setIsOpen(state);
+        setLink(link);
         setLocked(state);
-    }, [setIsOpen, setLocked]);
+    }, [setIsOpen, setLink, setLocked]);
 
     const contextValue: ModalContextType = {
         open,
+        link,
         setModal
     };
 

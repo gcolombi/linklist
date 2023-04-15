@@ -9,6 +9,7 @@ export default function LinksListItem({
     image
 }: ListItem ) {
     const { setModal } = useModalContext();
+
     return (
         <li className="relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black border-solid border border-black/10 shadow-md">
             <a
@@ -34,7 +35,7 @@ export default function LinksListItem({
             <button
                 className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-0 hover:bg-black/20 group-hover:opacity-100 transition duration-300"
                 title="Share"
-                onClick={() => setModal(true)}
+                onClick={() => setModal(true, {title, href})}
             >
                 <Share />
             </button>

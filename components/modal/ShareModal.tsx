@@ -1,3 +1,4 @@
+import { Link } from '@/lib/types';
 import { useCallback, useMemo, useRef } from 'react';
 import useModalContext from '@/context/modalContext';
 import Modal from './Modal';
@@ -12,7 +13,7 @@ import Email from '../icons/share/Email';
 import Logo from '../icons/Logo';
 
 export default function useShareModal() {
-    const { open, setModal } = useModalContext();
+    const { open, link, setModal } = useModalContext();
 
     const ShareModalCallback = useCallback(({
         title
@@ -22,6 +23,7 @@ export default function useShareModal() {
         return (
             <ShareModal
                 title={title}
+                link={link}
                 showModal={open}
                 setModal={setModal}
             />
@@ -35,12 +37,14 @@ export default function useShareModal() {
 
 function ShareModal({
     title,
+    link,
     showModal,
     setModal
 }: {
     title: string;
+    link: Link;
     showModal: boolean;
-    setModal: (state: boolean) => void;
+    setModal: (state: boolean, link?: Link) => void;
 }) {
     const modalRef = useRef<HTMLDivElement>(null);
 
@@ -65,7 +69,7 @@ function ShareModal({
                     <ul>
                         <li>
                             <a
-                                href="https://www.facebook.com/sharer.php?u="
+                                href={`https://www.facebook.com/sharer.php?u=${link?.href}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -79,7 +83,7 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href="https://www.linkedin.com/sharing/share-offsite/?url="
+                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${link?.href}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -93,7 +97,7 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href="https://twitter.com/intent/tweet?text=Check out this Linktree! - "
+                                href={`https://twitter.com/intent/tweet?text=${link?.title} - ${link?.href}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -107,7 +111,7 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href="https://wa.me/?text=Check out this Linktree! - "
+                                href={`https://wa.me/?text=${link?.title} - ${link?.href}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -135,7 +139,7 @@ function ShareModal({
                         </li>
                         <li>
                             <a
-                                href="mailto:?subject=Check out this Linktree! &body=Check out this Linktree! - "
+                                href={`mailto:?subject=Check out this link! &body=${link?.title} - ${link?.href}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-4 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
@@ -156,7 +160,7 @@ function ShareModal({
                                 <Logo />
                             </div>
                             <div className="pl-4 text-left flex-1 min-w-0">
-                                <p className="whitespace-nowrap overflow-hidden text-ellipsis">http://localhost:3000?u=loremipsum</p>
+                                <p className="whitespace-nowrap overflow-hidden text-ellipsis">{link?.href}</p>
                             </div>
                             <div className="w-[76px] whitespace-nowrap">
                                 <p>Copy</p>
