@@ -39,7 +39,7 @@ export default function TopBar() {
                 <Image
                     className="w-11 h-11 object-contain rounded-full"
                     alt="title"
-                    src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=500&q=80"
+                    src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=500&q=80"
                     width={44}
                     height={44}
                 />
@@ -52,7 +52,7 @@ export default function TopBar() {
                     }
                 )}
             >
-                <span className="block font-semibold">@John Doe</span>
+                <span className="block font-bold">@John Doe</span>
             </div>
             <button
                 className={classNames(

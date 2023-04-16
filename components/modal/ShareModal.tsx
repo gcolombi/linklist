@@ -14,8 +14,8 @@ import WhatsApp from '../icons/share/WhatsApp';
 import Messenger from '../icons/share/Messenger';
 import Email from '../icons/share/Email';
 import Logo from '../icons/Logo';
-import classNames from 'classnames';
 import Share from '../icons/share/Share';
+import classNames from 'classnames';
 
 export default function useShareModal() {
     const { open, hasNativeSupport, link, setModal } = useModalContext();

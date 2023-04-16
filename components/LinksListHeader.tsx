@@ -24,7 +24,7 @@ export default function LinksListHeader({
                 <h1 className="font-bold text-xl text-white">@{name}</h1>
             </div>
             {content &&
-                <div className="mt-1 px-10 text-sm font-medium text-white text-center sm:text-base">
+                <div className="mt-1 px-10 text-sm text-white text-center sm:text-base">
                     <p>{content}</p>
                 </div>
             }

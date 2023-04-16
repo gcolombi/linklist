@@ -8,7 +8,12 @@ module.exports = {
         hoverOnlyWhenSupported: true
     },
     theme: {
-        extend: {}
+        extend: {
+            fontFamily: {
+                primary: ["var(--font-spaceMono)", "system-ui", "sans-serif"],
+                secondary: ["var(--font-inter)", "system-ui", "sans-serif"]
+            },
+        }
     },
     plugins: []
 }

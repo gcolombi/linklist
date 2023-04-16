@@ -62,7 +62,7 @@ export default function LinksListItem({
                         />
                     </div>
                 }
-                <h2 className="font-medium">{item.title}</h2>
+                <h2>{item.title}</h2>
             </a>
             <button
                 className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-1 bg-black/20 xl:bg-transparent xl:opacity-0 hover:bg-white/10 group-hover:opacity-100 transition duration-300"
