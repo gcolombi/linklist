@@ -18,7 +18,7 @@ export default function Layout({
                 {children}
                 <Footer />
             </main>
-            <ShareModal title="Share this Linktree" />
+            <ShareModal name="John Doe" title="Share this Linklist" />
         </>
     );
 }

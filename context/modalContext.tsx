@@ -1,6 +1,7 @@
 import { Link } from '@/lib/types';
 import useLockedScroll from '@/hooks/useLockedScroll';
 import useWindowLocation from '@/hooks/useWindowLocation';
+import useWindowSize from '@/hooks/useWindowSize';
 import {
     createContext,
     ReactNode,
@@ -34,6 +35,7 @@ export function ModalContextProvider({
     const [link, setLink] = useState<Link>(undefined);
     const [locked, setLocked] = useLockedScroll(false);
     const { currentURL } = useWindowLocation();
+    const { windowSize } = useWindowSize();
 
     useEffect(() => {
         if (navigator['share']) {
@@ -41,8 +43,10 @@ export function ModalContextProvider({
         }
     }, []);
 
-    const nativeSupportHandler = (state: boolean, link: Link) => {
-        if (state) {
+    const nativeSupportHandler = (state: boolean, link: Link, isTopBar?: boolean) => {
+        console.log(currentURL);
+        console.log(windowSize.width);
+        if (state && !isTopBar || windowSize.width !== undefined && windowSize.width > 640) {
             navigator.share({
                 title: link?.title,
                 url: link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href
@@ -58,15 +62,15 @@ export function ModalContextProvider({
     };
 
     const setModal = useCallback((state: boolean, link: Link, isTopBar?: boolean) => {
-        if (hasNativeSupport && !isTopBar) {
-            nativeSupportHandler(state, link);
+        if (hasNativeSupport) {
+            nativeSupportHandler(state, link, isTopBar);
         } else {
             setIsOpen(state);
             setLink(link);
             setLocked(state);
         }
 
-    }, [hasNativeSupport, setIsOpen, setLink, setLocked]);
+    }, [hasNativeSupport, nativeSupportHandler, setIsOpen, setLink, setLocked]);
 
     const contextValue: ModalContextType = {
         open,
