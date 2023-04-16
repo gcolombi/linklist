@@ -2,6 +2,7 @@
 export type ListHeader = {
     avatar: string;
     name: string;
+    content?: string;
 }
 
 export type List = ListItem[];

@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 export default function LinksListHeader({
     avatar,
-    name
+    name,
+    content
 }: ListHeader) {
     return (
         <div className="flex flex-col items-center">
@@ -22,6 +23,11 @@ export default function LinksListHeader({
             <div className="mt-4">
                 <h1 className="font-bold text-xl text-white">@{name}</h1>
             </div>
+            {content &&
+                <div className="mt-1 px-10 text-sm font-medium text-white text-center sm:text-base">
+                    <p>{content}</p>
+                </div>
+            }
         </div>
     );
 };
