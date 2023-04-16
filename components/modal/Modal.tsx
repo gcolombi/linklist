@@ -14,7 +14,7 @@ function Modal({
 }: {
     children: ReactNode;
     showModal: boolean;
-    setModal: (state: boolean, link?: Link) => void;
+    setModal: (state: boolean, link?: Link, isTopBar?: boolean) => void;
 }, ref: ForwardedRef<HTMLDivElement> ) {
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {

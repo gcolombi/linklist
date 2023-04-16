@@ -2,8 +2,8 @@ import Head from 'next/head';
 import useWindowLocation from '@/hooks/useWindowLocation';
 
 export default function MetaData({
-    title = 'Linktree',
-    description = 'Linktree. Make your link do more.',
+    title = 'John Doe Facebook, Instagram, Links and more | Linklist',
+    description = 'Linklist. Make your link do more.',
     image = `${process.env.NEXT_PUBLIC_BASE_URL}/static/example.jpg`,
     type = 'profile'
 }: {

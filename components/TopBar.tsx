@@ -63,7 +63,7 @@ export default function TopBar() {
                     }
                 )}
                 title="Share"
-                onClick={() => setModal(true, link)}
+                onClick={() => setModal(true, link, true)}
             >
                 {typeof windowSize?.width === 'number' && windowSize?.width <= 640
                     ? <Dots />

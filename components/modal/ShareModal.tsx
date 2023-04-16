@@ -16,7 +16,7 @@ import Logo from '../icons/Logo';
 import classNames from 'classnames';
 
 export default function useShareModal() {
-    const { open, link, setModal } = useModalContext();
+    const { open, hasNativeSupport, link, setModal } = useModalContext();
 
     const ShareModalCallback = useCallback(({
         title
@@ -28,6 +28,7 @@ export default function useShareModal() {
                 title={title}
                 link={link}
                 showModal={open}
+                hasNativeSupport={hasNativeSupport}
                 setModal={setModal}
             />
         );
@@ -42,12 +43,14 @@ function ShareModal({
     title,
     link,
     showModal,
+    hasNativeSupport,
     setModal
 }: {
     title: string;
     link: Link;
     showModal: boolean;
-    setModal: (state: boolean, link?: Link) => void;
+    hasNativeSupport: boolean;
+    setModal: (state: boolean, link?: Link, isTopBar?: boolean) => void;
 }) {
     const [value, copy] = useCopyToClipboard();
     const [isCopying, setIsCopying] = useState(false);
