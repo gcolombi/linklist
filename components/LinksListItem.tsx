@@ -38,7 +38,7 @@ export default function LinksListItem({
             id={item.id}
             ref={itemRef}
             className={classNames(
-                'relative group [&:not(:last-child)]:mb-4 hover:scale-105 transition-all rounded bg-white/80 text-black shadow-md',
+                'relative group [&:not(:last-child)]:mb-4 hover:shadow-[0_0_15px_0_rgba(186,146,255,0.4)] transition-all duration-300 rounded-lg bg-slate-900/40 text-white border',
                 {
                     'z-[2100]': isShared
                 }
@@ -54,7 +54,7 @@ export default function LinksListItem({
                 {item.image &&
                     <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12 rounded overflow-hidden">
                         <Image
-                            className="h-full object-cover"
+                            className="h-full object-cover bg-white"
                             alt={item.title}
                             src={item.image}
                             width={48}
@@ -65,7 +65,7 @@ export default function LinksListItem({
                 <h2 className="font-medium">{item.title}</h2>
             </a>
             <button
-                className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-1 bg-black/20 xl:bg-transparent xl:opacity-0 hover:bg-black/20 group-hover:opacity-100 transition duration-300"
+                className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-1 bg-black/20 xl:bg-transparent xl:opacity-0 hover:bg-white/10 group-hover:opacity-100 transition duration-300"
                 title="Share"
                 onClick={() => setModal(true, {id: item.id, title: item.title, href: item.href})}
             >
