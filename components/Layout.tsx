@@ -13,6 +13,7 @@ export default function Layout({
     return (
         <>
             <TopBar />
+            <div className="u-radialGradient" />
             <main id="content" className="flex flex-col justify-between min-h-screen relative">
                 {children}
                 <Footer />
