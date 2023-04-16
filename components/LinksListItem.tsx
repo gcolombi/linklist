@@ -31,7 +31,7 @@ export default function LinksListItem({
 
             return  () => clearTimeout(timer);
         }
-    }, []);
+    }, [item.id, setHasShareLink]);
 
     return (
         <li
