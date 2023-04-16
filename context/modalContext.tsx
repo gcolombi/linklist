@@ -1,5 +1,6 @@
 import { Link } from '@/lib/types';
 import useLockedScroll from '@/hooks/useLockedScroll';
+import useWindowLocation from '@/hooks/useWindowLocation';
 import {
     createContext,
     ReactNode,
@@ -28,11 +29,22 @@ export function ModalContextProvider({
     const [open, setIsOpen] = useState(false);
     const [link, setLink] = useState<Link>(undefined);
     const [locked, setLocked] = useLockedScroll(false);
+    const { currentURL } = useWindowLocation();
 
     const setModal = useCallback((state: boolean, link?: Link) => {
-        setIsOpen(state);
-        setLink(link);
-        setLocked(state);
+        if (navigator['share']) {
+            navigator.share({
+                title: link?.title,
+                url: link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href
+            }).then(() => {
+                setLink(link);
+            })
+            .catch(console.error);
+        } else {
+            setIsOpen(state);
+            setLink(link);
+            setLocked(state);
+        }
     }, [setIsOpen, setLink, setLocked]);
 
     const contextValue: ModalContextType = {
