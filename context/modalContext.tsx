@@ -49,7 +49,7 @@ export function ModalContextProvider({
         if (state && !isTopBar || windowSize.width !== undefined && windowSize.width > 640) {
             navigator.share({
                 title: link?.title,
-                url: link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href
+                url: link?.id ? `${currentURL.split('?')[0]}?share_link=${link?.id}` : link?.href
             }).then(() => {
                 setLink(link);
             })

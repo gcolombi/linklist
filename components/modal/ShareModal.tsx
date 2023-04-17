@@ -64,7 +64,7 @@ function ShareModal({
     const [isCopying, setIsCopying] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
     const { currentURL } = useWindowLocation();
-    const url = link?.id ? `${currentURL.split('?')[0]}?link=${link?.id}` : link?.href;
+    const url = link?.id ? `${currentURL.split('?')[0]}?share_link=${link?.id}` : link?.href;
 
     const copyHandler = () => {
         copy(url ?? '');

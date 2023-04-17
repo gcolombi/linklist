@@ -18,7 +18,7 @@ export default function LinksListItem({
 
     useEffect(() => {
         const url = new URL(window.location.href);
-        const searchParams = url.searchParams.get('link');
+        const searchParams = url.searchParams.get('share_link');
 
         if (searchParams === item.id) {
             window.scrollTo(0, (itemRef.current?.offsetTop ?? 0) - 90);
