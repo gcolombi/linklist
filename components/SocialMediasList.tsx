@@ -3,7 +3,9 @@ import SocialMediasListItem from './SocialMediasListItem';
 
 export default function SocialMediasList({
     socialMedias
-}: SocialMedias) {
+}: {
+    socialMedias: SocialMedias;
+}) {
     return (
         <div className="mt-6">
             <div className="flex justify-center items-center flex-wrap">

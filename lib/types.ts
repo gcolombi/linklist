@@ -15,9 +15,7 @@ export type ListItem = {
 }
 
 /* Social Medias */
-export type SocialMedias = {
-    socialMedias: SocialMediaItem[];
-}
+export type SocialMedias = SocialMediaItem[];
 
 export type SocialMediaItem = {
     title: string;
@@ -30,4 +28,4 @@ export type Link = {
     id?: string;
     title: string;
     href: string;
-} | undefined
+} | undefined;

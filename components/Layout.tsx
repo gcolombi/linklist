@@ -1,3 +1,4 @@
+import { ListHeader } from '@/lib/types';
 import { ReactNode } from 'react';
 import TopBar from './TopBar';
 import Footer from './Footer';
@@ -6,23 +7,25 @@ import classNames from 'classnames';
 
 export default function Layout({
     children,
-    className
+    className,
+    header
 }: {
     children: ReactNode;
-    className: string
+    className: string;
+    header: ListHeader;
 }) {
     const { ShareModal } = useShareModal();
 
     return (
         <>
             <div className={classNames(className, 'font-primary')}>
-                <TopBar />
+                <TopBar name={header.name} avatar={header.avatar} />
                 <div className="u-radialGradient" />
                 <main id="content" className="flex flex-col justify-between min-h-screen relative">
                     {children}
                     <Footer />
                 </main>
-                <ShareModal name="John Doe" title="Share this Linklist" />
+                <ShareModal name={header.name} title="Share this Linklist" />
             </div>
         </>
     );

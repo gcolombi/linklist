@@ -1,4 +1,4 @@
-import data from '../data.json';
+import { List, ListHeader, SocialMedias } from '@/lib/types';
 import { useEffect, useState } from 'react';
 import MetaData from '@/components/MetaData';
 import LinksListHeader from '@/components/LinksListHeader';
@@ -6,7 +6,15 @@ import LinksList from '@/components/LinksList';
 import SocialMediasList from '@/components/SocialMediasList';
 import classNames from 'classnames';
 
-export default function Home() {
+export default function Home({
+    header,
+    links,
+    socials
+}: {
+    header: ListHeader;
+    links: List;
+    socials: SocialMedias;
+}) {
     const [hasShareLink, setHasShareLink] = useState<boolean>(false);
 
     useEffect(() => {
@@ -25,9 +33,9 @@ export default function Home() {
             <section className="pt-16">
                 <div className="px-4">
                     <div className="max-w-[680px] mx-auto">
-                        <LinksListHeader {...data.header} />
-                        <LinksList links={data.links} setHasShareLink={setHasShareLink} />
-                        <SocialMediasList socialMedias={data.socials} />
+                        <LinksListHeader {...header} />
+                        <LinksList links={links} setHasShareLink={setHasShareLink} />
+                        <SocialMediasList socialMedias={socials} />
                     </div>
                 </div>
             </section>

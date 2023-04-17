@@ -1,3 +1,4 @@
+import data from '@/data.json';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { TopBarContextProvider } from '@/context/topBarContext';
@@ -25,8 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <TopBarContextProvider>
             <ModalContextProvider>
-                <Layout className={classNames(spaceMono.variable, inter.variable)}>
-                    <Component {...pageProps} />
+                <Layout className={classNames(spaceMono.variable, inter.variable)} header={data.header}>
+                    <Component {...pageProps} {...data} />
                 </Layout>
             </ModalContextProvider>
         </TopBarContextProvider>
