@@ -1,5 +1,5 @@
-import { SocialMediaItem } from "@/lib/types";
-import Icon from "./icons/socialMedias";
+import { SocialMediaItem } from '@/lib/types';
+import Icon from './icons/socialMedias';
 
 export default function SocialMediasListItem({
     title,
