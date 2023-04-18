@@ -65,11 +65,13 @@ export default function LinksListItem({
                 <h2>{item.title}</h2>
             </a>
             <button
-                className="flex justify-center items-center absolute top-1/2 right-2 -translate-y-1/2 w-10 h-10 rounded-full opacity-1 bg-black/20 xl:bg-transparent xl:opacity-0 hover:bg-white/10 group-hover:opacity-100 transition duration-300"
+                className="flex justify-center items-center absolute top-1/2 right-1 -translate-y-1/2 w-12 h-12 opacity-1 xl:opacity-0 group-hover:opacity-100 transition duration-300"
                 title="Share"
                 onClick={() => setModal(true, item)}
             >
-                <Share />
+                <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10 xl:bg-transparent hover:bg-white/10 transition duration-300">
+                    <Share />
+                </div>
             </button>
         </li>
     )
