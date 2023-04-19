@@ -1,6 +1,8 @@
 import data from '@/data.json';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { ReactElement, ReactNode } from 'react';
+import { NextPage } from 'next';
 import { TopBarContextProvider } from '@/context/topBarContext';
 import { ModalContextProvider } from '@/context/modalContext';
 import Layout from '@/components/Layout';
@@ -22,14 +24,29 @@ const inter = Inter({
     variable: '--font-inter'
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+type NextPageWithLayout = NextPage & {
+    getLayout?: (page: ReactElement) => ReactNode;
+}
+
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout;
+}
+
+function mainLayout(page: ReactElement) {
     return (
         <TopBarContextProvider>
             <ModalContextProvider>
                 <Layout className={classNames(spaceMono.variable, inter.variable)} header={data.header}>
-                    <Component {...pageProps} {...data} />
+                    {page}
                 </Layout>
             </ModalContextProvider>
         </TopBarContextProvider>
     );
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+    /* Use the layout defined at the page level, if available */
+    const getLayout = Component.getLayout || mainLayout;
+
+    return getLayout(<Component {...pageProps} {...data} className={classNames(spaceMono.variable, inter.variable)} />);
 }
