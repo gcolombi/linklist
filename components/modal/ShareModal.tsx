@@ -104,7 +104,7 @@ function ShareModal({
             .to('[data-modal]', {
                 opacity: 1,
                 scale: 1,
-                duration: 0.2
+                duration: 0.3
             })
             .reverse();
         }, modalRef);
