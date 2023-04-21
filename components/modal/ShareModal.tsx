@@ -1,9 +1,11 @@
 import { Link } from '@/lib/types';
+import gsap from 'gsap';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useModalContext from '@/context/modalContext';
 import useWindowLocation from '@/hooks/useWindowLocation';
 import useWindowSize from '@/hooks/useWindowSize';
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Modal from './Modal';
 import Close from '../icons/Close';
 import Chevron from '../icons/Chevron';
@@ -63,6 +65,7 @@ function ShareModal({
     const [value, copy] = useCopyToClipboard();
     const [isCopying, setIsCopying] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
+    const timeline = useRef<GSAPTimeline | null>(null);
     const { currentURL } = useWindowLocation();
     const url = link?.id ? `${currentURL.split('?')[0]}?share_link=${link?.id}` : link?.href;
 
@@ -81,10 +84,42 @@ function ShareModal({
         }
     }, [isCopying]);
 
+    useIsomorphicLayoutEffect(() => {
+        if (!showModal) {
+            return;
+        }
+
+        const ctx = gsap.context(() => {
+            timeline.current = gsap
+            .timeline({
+                defaults: {
+                    ease: 'sine.out'
+                }
+            })
+            .to(modalRef.current, {
+                opacity: 1,
+                pointerEvents: 'all',
+                duration: 0.3
+            })
+            .to('[data-modal]', {
+                opacity: 1,
+                scale: 1,
+                duration: 0.2
+            })
+            .reverse();
+        }, modalRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    useIsomorphicLayoutEffect(() => {
+        timeline.current?.reversed(!showModal);
+    }, []);
+
     return (
         <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
             {hasNativeSupport && typeof windowSize.width === 'number' && windowSize.width <= 640 ? (
-                <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] p-5 max-h-full overflow-y-auto" data-modal>
+                <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] p-5 max-h-full overflow-y-auto">
                     <div className="relative text-center font-semibold">
                         <div className=" px-14">
                             <h2 className="">@{name}</h2>
@@ -93,13 +128,12 @@ function ShareModal({
                             <button
                                 className="flex justify-center items-center w-8 h-8 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                                 onClick={() => setModal(false)}
-                                data-modal-close
                             >
                                 <Close />
                             </button>
                         </div>
                     </div>
-                    <div className="mt-5 font-semibold" data-modal-content>
+                    <div className="mt-5 font-semibold">
                         <button
                             className="flex w-full items-center py-4"
                             onClick={() => setModal(true, link)}
@@ -116,7 +150,7 @@ function ShareModal({
                         </button>
                     </div>
                 </div>
-            ) : (  <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto sm:rounded-b-2xl" data-modal>
+            ) : (  <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] py-6 px-2 max-h-full overflow-y-auto sm:rounded-b-2xl opacity-0 scale-0" data-modal>
                     <div className="relative text-center font-semibold">
                         <div className=" px-14">
                             <h2 className="">{title}</h2>
@@ -125,13 +159,12 @@ function ShareModal({
                             <button
                                 className="flex justify-center items-center w-8 h-8 rounded-lg hover:bg-gray-200 transition-[background] duration-300"
                                 onClick={() => setModal(false)}
-                                data-modal-close
                             >
                                 <Close />
                             </button>
                         </div>
                     </div>
-                    <div className="mt-10 mb-4 font-semibold" data-modal-content>
+                    <div className="mt-10 mb-4 font-semibold">
                         <ul>
                             <li>
                                 <a

@@ -31,7 +31,7 @@ function Modal({
     return (
         <>
             {showModal &&
-                <section className="fixed top-0 left-0 z-[2000] w-full h-full flex justify-center items-end sm:items-center font-secondary" ref={ref}>
+                <section className="fixed top-0 left-0 z-[2000] w-full h-full flex justify-center items-end sm:items-center font-secondary opacity-0 pointer-events-none" ref={ref}>
                     <div
                         className="absolute top-0 left-0 w-full h-full bg-black/60"
                         onClick={() => setModal(false)}
