@@ -3,27 +3,24 @@ import React, { CSSProperties, ReactNode, useRef } from 'react';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 
 type Animation = {
-    children: ReactNode,
-    durationIn: number,
-    delay: number,
-    from: CSSProperties,
-    to: GSAPTweenVars,
-    watch: boolean,
-    start: string,
-    end: string,
-    scrub: boolean,
-    markers: boolean
+    children: ReactNode;
+    durationIn: number;
+    delay: number;
+    from: CSSProperties;
+    to: GSAPTweenVars;
+    watch: boolean | undefined;
+    start: string;
+    end: string;
+    scrub: boolean;
+    markers: boolean | undefined;
 }
 
 function Animate({
     children,
     durationIn,
-    // durationOut,
     delay,
-    // delayOut,
     from,
     to,
-    // skipOutro,
     watch,
     start,
     end,
@@ -52,18 +49,6 @@ function Animate({
                 duration: durationIn,
                 ...scrollTrigger
             });
-
-            /* Outro animation */
-            // if (!skipOutro) {
-            //     timeline.add(
-            //         gsap.to(element.current, {
-            //             ...from,
-            //             delay: delayOut,
-            //             duration: durationOut
-            //         }),
-            //         0
-            //     );
-            // }
         }, element);
         return () => ctx.revert();
     }, []);
