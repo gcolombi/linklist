@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 
 /* Links List */
 export type ListHeader = {
@@ -19,7 +19,7 @@ export type ListItem = {
 export type ListItemType = {
     item: ListItem;
     setHasShareLink: Dispatch<SetStateAction<boolean>>;
-} & BaseAnimation;
+} & AnimationProperties;
 
 /* Social Medias */
 export type SocialMedias = SocialMediaItem[];
@@ -38,7 +38,7 @@ export type Link = {
 } | undefined;
 
 /* Animations */
-export interface BaseAnimation {
+export interface AnimationProperties {
     durationIn?: number;
     delay?: number;
     ease?: string;
@@ -49,9 +49,22 @@ export interface BaseAnimation {
     markers?: boolean;
 }
 
+export type Animation = {
+    children: ReactNode;
+    durationIn: number;
+    delay: number;
+    from: CSSProperties;
+    to: GSAPTweenVars;
+    watch: boolean | undefined;
+    start: string;
+    end: string;
+    scrub: boolean;
+    markers: boolean | undefined;
+}
+
 export type Fade = {
     children: ReactNode;
-} & BaseAnimation;
+} & AnimationProperties;
 
 export type Translate = {
     children: ReactNode;
@@ -60,4 +73,4 @@ export type Translate = {
     y?: string;
     xTo?: number;
     yTo?: number;
-} & BaseAnimation;
+} & AnimationProperties;

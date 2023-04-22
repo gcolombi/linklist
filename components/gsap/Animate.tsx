@@ -1,19 +1,7 @@
+import { Animation } from '@/lib/types';
 import gsap from 'gsap';
-import React, { CSSProperties, ReactNode, useRef } from 'react';
+import React, { useRef } from 'react';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
-
-type Animation = {
-    children: ReactNode;
-    durationIn: number;
-    delay: number;
-    from: CSSProperties;
-    to: GSAPTweenVars;
-    watch: boolean | undefined;
-    start: string;
-    end: string;
-    scrub: boolean;
-    markers: boolean | undefined;
-}
 
 function Animate({
     children,
