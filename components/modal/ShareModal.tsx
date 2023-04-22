@@ -90,23 +90,42 @@ function ShareModal({
         }
 
         const ctx = gsap.context(() => {
-            timeline.current = gsap
-            .timeline({
-                defaults: {
-                    ease: 'sine.out'
-                }
-            })
-            .to(modalRef.current, {
-                opacity: 1,
-                pointerEvents: 'all',
-                duration: 0.3
-            })
-            .to('[data-modal]', {
-                opacity: 1,
-                scale: 1,
-                duration: 0.3
-            })
-            .reverse();
+            if (hasNativeSupport && window.innerWidth <= 640) {
+                timeline.current = gsap
+                .timeline({
+                    defaults: {
+                        ease: 'power4.out'
+                    }
+                })
+                .to(modalRef.current, {
+                    opacity: 1,
+                    pointerEvents: 'all',
+                    duration: 0.3
+                })
+                .to('[data-modal]', {
+                    y: 0,
+                    duration: 0.3
+                })
+                .reverse();
+            } else {
+                timeline.current = gsap
+                .timeline({
+                    defaults: {
+                        ease: 'sine.out'
+                    }
+                })
+                .to(modalRef.current, {
+                    opacity: 1,
+                    pointerEvents: 'all',
+                    duration: 0.3
+                })
+                .to('[data-modal]', {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3
+                })
+                .reverse();
+            }
         }, modalRef);
 
         return () => ctx.revert();
@@ -119,7 +138,7 @@ function ShareModal({
     return (
         <Modal showModal={showModal} setModal={setModal} ref={modalRef}>
             {hasNativeSupport && typeof windowSize.width === 'number' && windowSize.width <= 640 ? (
-                <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] p-5 max-h-full overflow-y-auto">
+                <div className="relative bg-white rounded-t-2xl w-full max-w-[384px] p-5 max-h-full overflow-y-auto translate-y-full" data-modal>
                     <div className="relative text-center font-semibold">
                         <div className=" px-14">
                             <h2 className="">@{name}</h2>
