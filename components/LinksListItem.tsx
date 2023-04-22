@@ -1,20 +1,44 @@
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { ListItem } from '@/lib/types';
 import useModalContext from '@/context/modalContext';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Image from 'next/image';
 import Share from '@/components/icons/share/Share';
 import classNames from 'classnames';
 
 export default function LinksListItem({
     item,
-    setHasShareLink
+    setHasShareLink,
+    durationIn = 0.5,
+    delay = 0,
+    ease = 'power4.out',
+    watch,
+    start = 'top bottom',
+    end = 'bottom top',
+    scrub = false,
+    markers
 }: {
     item: ListItem;
     setHasShareLink: Dispatch<SetStateAction<boolean>>;
+    durationIn?: number,
+    delay?: number,
+    ease?: string;
+    watch?: boolean,
+    start?: string,
+    end?: string,
+    scrub?: boolean,
+    markers?: boolean
 }) {
     const { setModal } = useModalContext();
     const itemRef = useRef<HTMLLIElement | null>(null);
+    const element = useRef<HTMLDivElement | null>(null);
     const [isShared, setIsShared] = useState<boolean>(false);
+    const from = {
+        opacity: 0,
+        transform: `translate(0, 100%)`
+    };
 
     useEffect(() => {
         const url = new URL(window.location.href);
@@ -33,46 +57,84 @@ export default function LinksListItem({
         }
     }, [item.id, setHasShareLink]);
 
+    useIsomorphicLayoutEffect(() => {
+        const scrollTrigger = watch ? {
+            scrollTrigger: {
+                trigger: element.current,
+                start,
+                end,
+                scrub,
+                markers: markers
+            }
+        } : {};
+
+        /* Checks if the parent is in viewport and sets delay to its start value */
+        if (!ScrollTrigger.isInViewport(itemRef.current ?? '')) {
+            delay = 0.3;
+        }
+
+        const ctx = gsap.context(() => {
+            /* Intro animation */
+            gsap.to(element.current, {
+                ease,
+                opacity: 1,
+                x: 0,
+                y: 0,
+                delay,
+                duration: durationIn,
+                ...scrollTrigger
+            });
+        }, element);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <li
             id={item.id}
             ref={itemRef}
             className={classNames(
-                'relative group [&:not(:last-child)]:mb-4 hover:shadow-[0_0_15px_0_rgba(186,146,255,0.4)] transition-all duration-300 rounded-lg bg-slate-900/40 text-white border',
+                'relative group [&:not(:last-child)]:mb-4 text-white',
                 {
                     'z-[2100]': isShared
                 }
             )}
         >
-            <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block py-4 px-16 text-center"
-                title={item.title}
+            <div
+                ref={element}
+                className="rounded-lg border bg-slate-900/40 hover:shadow-[0_0_15px_0_rgba(186,146,255,0.4)] transition-shadow duration-300"
+                style={{...from}}
             >
-                {item.image &&
-                    <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12 rounded overflow-hidden">
-                        <Image
-                            className="h-full object-cover bg-white"
-                            alt={item.title}
-                            src={item.image}
-                            width={48}
-                            height={48}
-                        />
+                <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block py-4 px-16 text-center"
+                    title={item.title}
+                >
+                    {item.image &&
+                        <div className="absolute top-1/2 left-1 -translate-y-1/2 w-12 h-12 rounded overflow-hidden">
+                            <Image
+                                className="h-full object-cover bg-white"
+                                alt={item.title}
+                                src={item.image}
+                                width={48}
+                                height={48}
+                            />
+                        </div>
+                    }
+                    <h2>{item.title}</h2>
+                </a>
+                <button
+                    className="flex justify-center items-center absolute top-1/2 right-1 -translate-y-1/2 w-12 h-12 opacity-1 xl:opacity-0 group-hover:opacity-100 transition duration-300"
+                    title="Share"
+                    onClick={() => setModal(true, item)}
+                >
+                    <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10 xl:bg-transparent hover:bg-white/10 transition duration-300">
+                        <Share />
                     </div>
-                }
-                <h2>{item.title}</h2>
-            </a>
-            <button
-                className="flex justify-center items-center absolute top-1/2 right-1 -translate-y-1/2 w-12 h-12 opacity-1 xl:opacity-0 group-hover:opacity-100 transition duration-300"
-                title="Share"
-                onClick={() => setModal(true, item)}
-            >
-                <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10 xl:bg-transparent hover:bg-white/10 transition duration-300">
-                    <Share />
-                </div>
-            </button>
+                </button>
+            </div>
         </li>
     )
 };

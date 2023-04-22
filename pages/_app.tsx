@@ -1,5 +1,7 @@
 import data from '@/data.json';
 import '@/styles/globals.css';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import type { AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
@@ -8,6 +10,8 @@ import { ModalContextProvider } from '@/context/modalContext';
 import Layout from '@/components/Layout';
 import { Space_Mono, Inter } from 'next/font/google';
 import classNames from 'classnames';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const spaceMono = Space_Mono({
     fallback: ['sans-serif'],
