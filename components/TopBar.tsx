@@ -11,7 +11,7 @@ import classNames from 'classnames';
 export default function TopBar({
     name,
     avatar
-}: ListHeader ) {
+}: ListHeader) {
     const { setRef, sticky } = useTopBarContext();
     const { windowSize } = useWindowSize();
     const { setModal } = useModalContext();

@@ -14,7 +14,7 @@ function Animate({
     end,
     scrub,
     markers
-}: Animation ) {
+}: Animation) {
     const element = useRef<HTMLDivElement>(null);
 
     useIsomorphicLayoutEffect(() => {
