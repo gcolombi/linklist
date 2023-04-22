@@ -70,7 +70,7 @@ export default function LinksListItem({
 
         /* Checks if the parent is in viewport and sets delay to its start value */
         if (!ScrollTrigger.isInViewport(itemRef.current ?? '')) {
-            delay = 0.3;
+            delay = 0.1;
         }
 
         const ctx = gsap.context(() => {

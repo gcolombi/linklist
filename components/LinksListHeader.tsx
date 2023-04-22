@@ -12,7 +12,7 @@ export default function LinksListHeader({
         <div className="flex flex-col items-center">
             {avatar &&
                 <FadeIn
-                    delay={0.5}
+                    delay={0.2}
                     ease="sine.in"
                 >
                     <Image
@@ -28,7 +28,7 @@ export default function LinksListHeader({
             <div className="mt-4 overflow-hidden">
                 <TranslateIn
                     fade={false}
-                    delay={0.7}
+                    delay={0.4}
                     y="100%"
                 >
                     <h1 className="font-bold text-xl text-white">@{name}</h1>
@@ -38,7 +38,7 @@ export default function LinksListHeader({
                 <div className="overflow-hidden">
                     <TranslateIn
                         fade={false}
-                        delay={0.9}
+                        delay={0.6}
                         y="100%"
                     >
                         <div className="mt-1 px-10 text-sm text-white text-center sm:text-base">

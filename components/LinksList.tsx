@@ -21,7 +21,7 @@ export default function LinksList({
                                 item={link}
                                 setHasShareLink={setHasShareLink}
                                 key={link.href}
-                                delay={0.3 + increment}
+                                delay={0.1 + increment}
                                 start="-100% bottom"
                                 end="top top"
                                 watch
