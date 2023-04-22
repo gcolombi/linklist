@@ -15,7 +15,7 @@ type Fade = {
 
 export default function FadeIn({
     children,
-    durationIn = 0.5,
+    durationIn = 0.2,
     delay = 0,
     ease = 'power4.out',
     watch,
