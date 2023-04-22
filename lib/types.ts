@@ -1,3 +1,5 @@
+import { Dispatch, ReactNode, SetStateAction } from 'react';
+
 /* Links List */
 export type ListHeader = {
     avatar: string;
@@ -14,6 +16,11 @@ export type ListItem = {
     image?: string;
 }
 
+export type ListItemType = {
+    item: ListItem;
+    setHasShareLink: Dispatch<SetStateAction<boolean>>;
+} & BaseAnimation;
+
 /* Social Medias */
 export type SocialMedias = SocialMediaItem[];
 
@@ -29,3 +36,28 @@ export type Link = {
     title: string;
     href: string;
 } | undefined;
+
+/* Animations */
+export interface BaseAnimation {
+    durationIn?: number;
+    delay?: number;
+    ease?: string;
+    watch?: boolean;
+    start?: string;
+    end?: string;
+    scrub?: boolean;
+    markers?: boolean;
+}
+
+export type Fade = {
+    children: ReactNode;
+} & BaseAnimation;
+
+export type Translate = {
+    children: ReactNode;
+    fade?: boolean;
+    x?: string;
+    y?: string;
+    xTo?: number;
+    yTo?: number;
+} & BaseAnimation;

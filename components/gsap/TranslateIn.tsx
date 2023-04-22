@@ -1,22 +1,5 @@
-import { ReactNode } from 'react';
+import { Translate } from '@/lib/types';
 import Animate from './Animate';
-
-type Translate = {
-    children: ReactNode;
-    fade?: boolean;
-    durationIn?: number;
-    delay?: number;
-    ease?: string;
-    x?: string;
-    y?: string;
-    xTo?: number;
-    yTo?: number;
-    watch?: boolean;
-    start?: string;
-    end?: string;
-    scrub?: boolean;
-    markers?: boolean;
-}
 
 export default function TranslateIn({
     children,
@@ -33,7 +16,7 @@ export default function TranslateIn({
     end = 'bottom top',
     scrub = false,
     markers
-}: Translate ) {
+}: Translate) {
     return (
         <Animate
             durationIn={durationIn}

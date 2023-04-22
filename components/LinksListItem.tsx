@@ -1,8 +1,8 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { ListItem } from '@/lib/types';
+import { ListItemType } from '@/lib/types';
 import useModalContext from '@/context/modalContext';
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Image from 'next/image';
 import Share from '@/components/icons/share/Share';
@@ -19,18 +19,7 @@ export default function LinksListItem({
     end = 'bottom top',
     scrub = false,
     markers
-}: {
-    item: ListItem;
-    setHasShareLink: Dispatch<SetStateAction<boolean>>;
-    durationIn?: number;
-    delay?: number;
-    ease?: string;
-    watch?: boolean;
-    start?: string;
-    end?: string;
-    scrub?: boolean;
-    markers?: boolean;
-}) {
+}: ListItemType) {
     const { setModal } = useModalContext();
     const itemRef = useRef<HTMLLIElement | null>(null);
     const element = useRef<HTMLDivElement | null>(null);

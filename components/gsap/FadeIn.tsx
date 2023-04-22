@@ -1,17 +1,5 @@
-import { ReactNode } from 'react';
+import { Fade } from '@/lib/types';
 import Animate from './Animate';
-
-type Fade = {
-    children: ReactNode;
-    durationIn?: number;
-    delay?: number;
-    ease?: string;
-    watch?: boolean;
-    start?: string;
-    end?: string;
-    scrub?: boolean;
-    markers?: boolean;
-}
 
 export default function FadeIn({
     children,
@@ -23,7 +11,7 @@ export default function FadeIn({
     end = 'bottom top',
     scrub = false,
     markers
-}: Fade ) {
+}: Fade) {
     return (
         <Animate
             durationIn={durationIn}
