@@ -2,20 +2,20 @@ import { ReactNode } from 'react';
 import Animate from './Animate';
 
 type Translate = {
-    children: ReactNode,
+    children: ReactNode;
     fade?: boolean;
-    durationIn?: number,
-    delay?: number,
+    durationIn?: number;
+    delay?: number;
     ease?: string;
     x?: string;
     y?: string;
     xTo?: number;
     yTo?: number;
-    watch?: boolean,
-    start?: string,
-    end?: string,
-    scrub?: boolean,
-    markers?: boolean
+    watch?: boolean;
+    start?: string;
+    end?: string;
+    scrub?: boolean;
+    markers?: boolean;
 }
 
 export default function TranslateIn({

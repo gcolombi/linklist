@@ -22,14 +22,14 @@ export default function LinksListItem({
 }: {
     item: ListItem;
     setHasShareLink: Dispatch<SetStateAction<boolean>>;
-    durationIn?: number,
-    delay?: number,
+    durationIn?: number;
+    delay?: number;
     ease?: string;
-    watch?: boolean,
-    start?: string,
-    end?: string,
-    scrub?: boolean,
-    markers?: boolean
+    watch?: boolean;
+    start?: string;
+    end?: string;
+    scrub?: boolean;
+    markers?: boolean;
 }) {
     const { setModal } = useModalContext();
     const itemRef = useRef<HTMLLIElement | null>(null);

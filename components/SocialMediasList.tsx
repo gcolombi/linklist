@@ -10,7 +10,10 @@ export default function SocialMediasList({
         <div className="mt-6">
             <div className="flex justify-center items-center flex-wrap">
                 {socialMedias.map((socialMedia: SocialMediaItem) => (
-                    <SocialMediasListItem {...socialMedia} key={socialMedia.href} />
+                    <SocialMediasListItem
+                        item={socialMedia}
+                        key={socialMedia.href}
+                    />
                 ))}
             </div>
         </div>
