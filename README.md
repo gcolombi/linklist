@@ -1,38 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Linklist</h1>
 
-## Getting Started
+<p align="center">
+  <a href="#introduction"><strong>Introduction</strong></a> ·
+  <a href="#installation"><strong>Installation</strong></a> ·
+  <a href="#tech-stack--features"><strong>Tech Stack & Features</strong></a>
+</p>
 
-First, run the development server:
+<a href="">
+  <img alt="Linklist" src="">
+</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Introduction
+
+Linklist is a Linktree clone built with Next.js and Tailwind.
+
+## Installation
+
+Yarn
+```sh 
+git clone git@github.com:gcolombi/linklist.git project-name
+cd project-name
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+NPM
+```sh 
+git clone git@github.com:gcolombi/linklist.git project-name
+cd project-name
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Tech Stack & Features
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Framework
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Next.js](https://nextjs.org/) - React framework for building performant apps with the best developer experience
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Language
 
-## Learn More
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale
 
-To learn more about Next.js, take a look at the following resources:
+### Hosting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Vercel](https://vercel.com/) - Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### UI
 
-## Deploy on Vercel
+- [Tailwind CSS](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework to build rapidly modern websites without ever leaving your HTML
+- [GSAP](https://greensock.com/) - GSAP is an industry standard JavaScript animation library from GreenSock that lets you craft high-performance animations that work in every major browser. A great place to get started with GSAP and React is to read [GSAP X React](https://greensock.com/react), [Getting Started with GSAP + React](https://greensock.com/react-basics) and [GSAP + React, Advanced Animation Techniques](https://greensock.com/react-advanced)
+- [`@next/font`](https://nextjs.org/docs/basic-features/font-optimization) - Optimize your fonts (including custom fonts) and remove external network requests for improved privacy and performance
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Hooks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `useCopyToClipboard` - This React hook provides a `copy` method to save a string in the clipboard and the copied value (default: `null`)
+- `useIsomorphicLayoutEffect` - A React helper hook to schedule a layout effect with a fallback to a regular effect for environments where layout effects should not be used (such as server-side rendering)
+- `useLockedScroll` - This React hook blocks scrolling on a page, a good example is when opening modals
+- `useScrollbar` - A React helper hook to observe scroll position
+- `useWindowLocation` - This React Hook retrieves window location
+- `useWindowSize` - This React Hook retrives window dimensions also works on resize
