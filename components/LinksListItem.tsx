@@ -47,6 +47,9 @@ export default function LinksListItem({
     }, [item.id, setHasShareLink]);
 
     useIsomorphicLayoutEffect(() => {
+        const url = new URL(window.location.href);
+        const searchParams = url.searchParams.get('share_link');
+
         const scrollTrigger = watch ? {
             scrollTrigger: {
                 trigger: element.current,
@@ -57,8 +60,8 @@ export default function LinksListItem({
             }
         } : {};
 
-        /* Checks if the parent is in viewport and sets delay to its start value */
-        if (!ScrollTrigger.isInViewport(itemRef.current ?? '')) {
+        /* Checks if the parent is in viewport and not shared in order to sets delay to its start value */
+        if (!ScrollTrigger.isInViewport(itemRef.current ?? '') && !searchParams) {
             delay = 0.1;
         }
 
