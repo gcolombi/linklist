@@ -9,7 +9,7 @@ export default function LinksListHeader({
     content
 }: ListHeader) {
     return (
-        <div className="flex flex-col items-center">
+        <div className="relative flex flex-col items-center">
             {avatar &&
                 <FadeIn
                     delay={0.2}

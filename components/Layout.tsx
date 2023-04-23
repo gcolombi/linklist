@@ -20,8 +20,8 @@ export default function Layout({
         <>
             <div className={classNames(className, 'font-primary')}>
                 <TopBar name={header.name} avatar={header.avatar} />
-                <div className="u-radialGradient" />
-                <main id="content" className="flex flex-col justify-between min-h-screen relative">
+                <main id="content" className="relative flex flex-col justify-between min-h-screen">
+                    <div className="u-radialGradient xl:fixed" />
                     {children}
                     <Footer />
                 </main>
