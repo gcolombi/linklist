@@ -1,3 +1,7 @@
+<a href="https://linklist-domain.vercel.app/">
+  <img alt="Linklist" src="https://linklist-domain.vercel.app/static/readme-image.png">
+</a>
+
 <h1 align="center">Linklist</h1>
 
 <p align="center">
@@ -5,10 +9,6 @@
   <a href="#installation"><strong>Installation</strong></a> ·
   <a href="#tech-stack--features"><strong>Tech Stack & Features</strong></a>
 </p>
-
-<a href="">
-  <img alt="Linklist" src="">
-</a>
 
 ## Introduction
 

@@ -4,7 +4,6 @@ const nextConfig = {
     images: {
         domains: [
             'images.unsplash.com',
-            'github.com/devicons/devicon/blob/master/icons/',
             'raw.githubusercontent.com',
             'pbs.twimg.com'
         ]

@@ -6,12 +6,6 @@
     },
     "links": [
         {
-            "id": "9c6fa6f5",
-            "title": "Typescript",
-            "href": "https://www.typescriptlang.org",
-            "image": "https://pbs.twimg.com/profile_images/1290672565690695681/0G4bie6b_400x400.jpg"
-        },
-        {
             "id": "6d4534e0",
             "title": "React",
             "href": "https://react.dev",
@@ -34,6 +28,12 @@
             "title": "Nuxt.js",
             "href": "https://nuxt.com",
             "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nuxtjs/nuxtjs-original.svg"
+        },
+        {
+            "id": "9c6fa6f5",
+            "title": "Tailwind",
+            "href": "https://tailwindcss.com/",
+            "image": "https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/tailwindcss/tailwindcss-plain.svg"
         },
         {
             "id": "461689fe",
