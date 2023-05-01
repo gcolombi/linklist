@@ -38,7 +38,7 @@ export type Link = {
 } | undefined;
 
 /* Animations */
-export interface AnimationProperties {
+export type AnimationProperties = {
     durationIn?: number;
     delay?: number;
     ease?: string;

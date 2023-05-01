@@ -2,14 +2,14 @@ import { useState } from 'react';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 interface Size {
-    width: number | undefined,
-    height: number | undefined
+    width: number | undefined;
+    height: number | undefined;
 }
 
 interface WindowSize {
-    windowSize: Size,
-    isMobile: boolean,
-    isDesktop: boolean
+    windowSize: Size;
+    isMobile: boolean;
+    isDesktop: boolean;
 }
 
 export default function useWindowSize(): WindowSize {
