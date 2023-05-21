@@ -15,7 +15,7 @@ function Animate({
     scrub,
     markers
 }: Animation) {
-    const element = useRef<HTMLDivElement>(null);
+    const element = useRef<HTMLDivElement | null>(null);
 
     useIsomorphicLayoutEffect(() => {
         const scrollTrigger = watch ? {

@@ -64,7 +64,7 @@ function ShareModal({
     const { windowSize } = useWindowSize();
     const [value, copy] = useCopyToClipboard();
     const [isCopying, setIsCopying] = useState(false);
-    const modalRef = useRef<HTMLDivElement>(null);
+    const modalRef = useRef<HTMLDivElement | null>(null);
     const timeline = useRef<GSAPTimeline | null>(null);
     const { currentURL } = useWindowLocation();
     const url = link?.id ? `${currentURL.split('?')[0]}?share_link=${link?.id}` : link?.href;
