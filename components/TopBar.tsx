@@ -6,6 +6,7 @@ import useWindowLocation from '@/hooks/useWindowLocation';
 import Image from 'next/image';
 import Dots from './icons/Dots';
 import Share from './icons/share/Share';
+import FadeIn from './gsap/FadeIn';
 import classNames from 'classnames';
 
 export default function TopBar({
@@ -58,23 +59,30 @@ export default function TopBar({
             >
                 <span className="block font-bold">@{name}</span>
             </div>
-            <button
-                className={classNames(
-                    'flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 transition-[background] duration-300',
-                    {
-                        'bg-white/80 text-black hover:bg-white/70': !sticky,
-                        'bg-black text-white hover:bg-black/75': sticky
-                    }
-                )}
-                title="Share"
-                onClick={() => setModal(true, link, true)}
-            >
-                {typeof windowSize.width === 'number' && windowSize.width <= 640 ? (
-                    <Dots />
-                ) : (
-                    <Share />
-                )}
-            </button>
+            <div className="justify-self-end">
+                <FadeIn
+                    delay={0.2}
+                    ease="sine.in"
+                >
+                    <button
+                        className={classNames(
+                            'flex justify-center items-center w-10 h-10 rounded-full justify-self-end border-solid border border-black/10 transition-[background] duration-300',
+                            {
+                                'bg-white/80 text-black hover:bg-white/70': !sticky,
+                                'bg-black text-white hover:bg-black/75': sticky
+                            }
+                        )}
+                        title="Share"
+                        onClick={() => setModal(true, link, true)}
+                    >
+                        {typeof windowSize.width === 'number' && windowSize.width <= 640 ? (
+                            <Dots />
+                        ) : (
+                            <Share />
+                        )}
+                    </button>
+                </FadeIn>
+            </div>
         </header>
     );
 };

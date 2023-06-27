@@ -1,5 +1,13 @@
 import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 
+/* Meta data */
+export type MetaDataProps = {
+    title?: string;
+    description?: string;
+    image?: string;
+    type?: string;
+}
+
 /* Links List */
 export type ListHeader = {
     avatar: string;
